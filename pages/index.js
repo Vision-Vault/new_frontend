@@ -2,7 +2,7 @@ import Hhead from '../components/Hhead';
 import { useAuth } from "@/contexts/auth"
 import Login from './login';
 
-export default function CookieStandAdmin() {
+export default function index() {
   const { user, token } = useAuth()
 
   return (
