@@ -8,24 +8,24 @@ const baseUrl = process.env.NEXT_PUBLIC_URL
 
 export default function Profile() {
   const { user, token } = useAuth()
-  const [data,setuserdata] = useState({
+  const [data, setuserdata] = useState({
     username: '',
-    profile_picture : '',
+    profile_picture: '',
     bio: '',
     email: '',
- })
- const [post,setPost] = useState({
-  title:'',
-  description:'',
-  image:'',
-  video:'',
-  funding_goal:'',
-  allowed_donors:'',
-  rating:'',
-  status:'',
-  creator:'',
-  category:'',
- });
+  })
+  const [post, setPost] = useState({
+    title: '',
+    description: '',
+    image: '',
+    video: '',
+    funding_goal: '',
+    allowed_donors: '',
+    rating: '',
+    status: '',
+    creator: '',
+    category: '',
+  });
 
   async function getData() {
     if (token) {
@@ -49,7 +49,7 @@ export default function Profile() {
   }
   async function getPost() {
     if (token) {
-      
+
       const url = "https://new-backend-alpha.vercel.app/api/v1/posts/2/"
       const option = {
         method: "GET",
@@ -70,14 +70,14 @@ export default function Profile() {
         //     </div>
         //   );
         // });
-       
+
       } else {
         console.log("Failed to access protected route");
       }
- 
+
     }
 
-    
+
   }
 
   useEffect(() => {
@@ -91,45 +91,44 @@ export default function Profile() {
       {user ? (
         <>
           <Hhead data={"Home"} />
-          <div className="body1">
-            <div className="container">
-              <div className="profile-header">
-                <div className="profile-img">
+          <div className="mo-body1">
+            <div className="mo-container">
+              <div className="mo-profile-header">
+                <div className="mo-profile-img">
                   <img src={data.profile_picture} width="200" alt="Profile Image" />
                 </div>
-                <div className="profile-nav-info">
-                  <div className="address">
-                    <p className="country" id="state">
+                <div className="mo-profile-nav-info">
+                  <div className="mo-address">
+                    <p className="mo-country" id="mo-state">
                       Profile Page: {data.username}
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="main-bd">
-                <div className="left-side">
-                  <div className="profile-side">
-
-                    <p className="user-mail">
+              <div className="mo-main-bd">
+                <div className="mo-left-side">
+                  <div className="mo-profile-side">
+                    <p className="mo-user-mail">
                       <i className="fa fa-envelope"></i> {data.email}
                     </p>
-                    <div className="user-bio">
+                    <div className="mo-user-bio">
                       <h2>Category : </h2>
                       {post.title}
-                      <p className="bio">
+                      <p className="mo-bio">
                         {/* <h3>description : </h3> */}
                         {/* {data.bio} */}
                       </p>
                     </div>
-                    <div className="profile-btn">
-                      <button className="createbtn" id="Create-post">
+                    <div className="mo-profile-btn">
+                      <button className="mo-createbtn" id="mo-Create-post">
                         <i className="fa fa-plus"></i> Create Project
                       </button>
                     </div>
-                    <div className="user-rating">
-                      <h3 className="rating">4.9</h3>
-                      <div className="rate">
-                        <div className="star-outer">
-                          <div className="star-inner">
+                    <div className="mo-user-rating">
+                      <h3 className="mo-rating">4.9</h3>
+                      <div className="mo-rate">
+                        <div className="mo-star-outer">
+                          <div className="mo-star-inner">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -137,19 +136,19 @@ export default function Profile() {
                             <i className="fa fa-star"></i>
                           </div>
                         </div>
-                        <span className="no-of-user-rate">
+                        <span className="mo-no-of-user-rate">
                           <span>120</span>&nbsp;&nbsp;Posts
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="right-side">
-                  <div className="right-side-post">
+                <div className="mo-right-side">
+                  <div className="mo-right-side-post">
                     <h2>Your Projects  :- </h2>
                     <p>{post.description}</p>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <p> So the project {post.description} this just a test  </p>
                   </div>
                 </div>
@@ -162,11 +161,10 @@ export default function Profile() {
         <Login />
       )
       }
-
     </>
 
   )
-    
+
 }
 
 
