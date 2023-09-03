@@ -51,23 +51,24 @@ export default function Toprated() {
           </p>
         </div>
 
-        <Link href={"/"}>
+
           <div className="topposts-container">
             {topPosts.map((item, index) => (
               <div className="topposts" key={index}>
+<Link href={"/"}>
               <div id='toppost1'>
 
               <img className="wimg" src={item.image} alt={item.title} />
                 <h2>{item.title}</h2>
                 </div>
-
+ </Link>
 
 
 
               </div>
             ))}
           </div>
-        </Link>
+
       </div>
     </>
   );
