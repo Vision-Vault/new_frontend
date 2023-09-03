@@ -35,40 +35,55 @@ const ProjectForm = () => {
     e.target.reset();
 
   }
-  
+
   return (
-    <div className="form-overlay">
-      <form className="project-form" onSubmit={PostData}>
-      <input
-          type="text"
-          placeholder="Title"
-          name="title"
-        />
-        <textarea
-          placeholder="Description"
-          name="description"
-        />
-        <input
-          type="number"
-          placeholder="Funding Goal"
-          name="funding_goal"
-        />
-        <input
-          type="text"
-          placeholder="Allowed Donors"
-          name="allowed_doners"
-        />
-        <input
-          type="text"
-          placeholder="Category"
-          name="category"
-        />
-        <button type="submit">Create Project</button>
-      </form>
-    </div>
+    <>
+      <div className="form-overlay">
+        <form className="project-form" onSubmit={PostData}>
+          <label htmlFor="title">Title:</label>
+          <input
+            type="text"
+            placeholder="Title"
+            name="title"
+            id="title" 
+          />
+
+          <label htmlFor="description">Description:</label>
+          <textarea
+            placeholder="Description"
+            name="description"
+            id="description"
+          />
+
+          <label htmlFor="funding_goal">Funding Goal:</label>
+          <input
+            type="number"
+            placeholder="Funding Goal"
+            name="funding_goal"
+            id="funding_goal"
+          />
+
+          <label htmlFor="allowed_donors">Allowed Donors:</label>
+          <input
+            type="text"
+            placeholder="Allowed Donors"
+            name="allowed_donors"
+            id="allowed_donors"
+          />
+
+          <label htmlFor="category">Category:</label>
+          <input
+            type="text"
+            placeholder="Category"
+            name="category"
+            id="category"
+          />
+
+          <button type="submit">Create Project</button>
+        </form>
+      </div>
+    </>
   );
 };
 
 export default ProjectForm;
-
-

@@ -388,25 +388,52 @@ width:100%;
 border-radius: 40px;
 box-shadow: 0 0 15px rgba(8, 8, 8, 0.8);
  height: 500px;
-margin-top: -95px;
+margin-top: -105px;
 padding:50px;
   color:white;
 
 }
+
+.newDiv img{
+  display: inline-block;
+  width: 500px;
+  margin-top: -60px;
+}
+
 .newDiv h1{
   color:white;
 }
 
 #cancel{
+    display: inline-block;
+
   background-color: rgba(238, 238, 238, 0);
   border-style: none;
    outline: none;
     cursor: pointer;
-    margin-top: 360px;
+    /* margin-top: -170px; */
     margin-left: 50%;
 
 }
+/* hussam create */
+.form-overlay{
+    display: inline-block;
 
+  width:600px;
+
+}
+.project-form input{
+
+  display: inline-block;
+  margin: 20px;
+
+
+}
+
+
+
+
+/* hussam create */
 
 /* homenew */
 

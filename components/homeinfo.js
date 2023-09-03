@@ -1,5 +1,5 @@
 import  { useState } from "react";
-
+import ProjectForm from "./createProject";
 import "font-awesome/css/font-awesome.min.css"; // Import Font Awesome styles
 
 export default function Homeinfo() {
@@ -64,6 +64,8 @@ export default function Homeinfo() {
       {showNewDiv && (
         <div className="newDiv">
           <h2>Create your project</h2>
+          <img src="/images/map.png" alt="mm"/>
+          <ProjectForm />
           <button id="cancel" onClick={toggleNewDiv}>
             <i
               className="fa fa-angle-double-right"

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/auth";
+import Login from "./login";
 const baseUrl = process.env.NEXT_PUBLIC_URL;
 
 function CategoryPage() {
@@ -35,18 +36,21 @@ function CategoryPage() {
   }
 
   useEffect(() => {
-    if (category) {
-      getCategory(category); // Call the getCategory function with the category parameter
-    }
-  }, [category, token]);
+
+      getCategory(1); // Call the getCategory function with the category parameter
+   
+  }, [ token]);
 
   return (
-    <div>
-      <h1>cccccccccccc===  </h1>
-      {data.map((item) => (
-        <div key={item.id}>{item.name}</div>
-      ))}
-    </div>
+    <>
+      {user ? (
+        <>
+<h1>  welcome</h1>
+        </>
+      ) : (
+        <Login />
+      )}
+    </>
   );
 }
 
