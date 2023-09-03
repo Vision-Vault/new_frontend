@@ -7,32 +7,6 @@ import 'font-awesome/css/font-awesome.min.css';
 const baseUrl = process.env.NEXT_PUBLIC_URL
 
 
-async function deletData( idPost) {
-    if (token) {
-      
-      const protectedUrl =  `${baseUrl}/api/v1/cookie_stands/${idPost}`;
-      const protectedOptions = {
-        method: "DELETE",
-        headers: {
-          "Authorization": `Bearer ${token.access}`,
-        },
-      };
-      try {
-        const protectedResponse = await fetch(protectedUrl, protectedOptions);
-        if (protectedResponse.status === 204) {
-          serJson([])
-          getData()
-        } else {
-          console.log("Failed to post data.");
-        }
-      } catch (error) {
-        console.log(`Error: ${error.message}`);
-      }
-    } else {
-      console.log("Token is missing.");
-    }
-  }
-
 
 export default function Profile() {
   const { user, token } = useAuth()
