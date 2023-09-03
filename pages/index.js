@@ -1,8 +1,9 @@
 import Hhead from '../components/Hhead';
 import { useAuth } from "@/contexts/auth"
 import Login from './login';
+import CreateProjectButton from '../components/ButtonCreateProject'
 
-export default function CookieStandAdmin() {
+export default function Index() {
   const { user, token } = useAuth()
 
   return (
@@ -12,6 +13,7 @@ export default function CookieStandAdmin() {
       <>
       <Hhead data={"Home"} />
       <div>Hello</div>
+      <CreateProjectButton />
       </>
       ):(
         <Login/>
