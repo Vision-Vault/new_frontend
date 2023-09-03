@@ -1,6 +1,7 @@
 import Hhead from '../components/Hhead';
 import { useAuth } from "@/contexts/auth"
 import Login from './login';
+import Home from '@/components/mainhome';
 
 export default function Index() {
   const { user, token } = useAuth()
@@ -11,8 +12,9 @@ export default function Index() {
       {user ? (
       <>
       <Hhead data={"Home"} />
-      <div>Hello</div>
-      </>
+     <Home/>
+
+   </>
       ):(
         <Login/>
       )
