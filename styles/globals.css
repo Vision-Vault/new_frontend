@@ -647,5 +647,43 @@ footer a {
   margin: 20px auto;
 }
 
+/* CSS for the Post Card */
+.mo-post-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mo-post-description {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* CSS for the Delete and Update Buttons */
+.mo-post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mo-delete-button,
+.mo-update-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mo-delete-button:hover,
+.mo-update-button:hover {
+  background-color: #c0392b;
+}
+
     
 /* end profile-page css style */
