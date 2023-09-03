@@ -50,7 +50,7 @@ export default function Profile() {
   async function getPost() {
     if (token) {
 
-      const url = "https://new-backend-alpha.vercel.app/api/v1/posts/2/"
+      const url = "https://new-backend-alpha.vercel.app/api/v1/posts/"
       const option = {
         method: "GET",
         headers: {
@@ -63,26 +63,18 @@ export default function Profile() {
         console.log(post)
         setPost(post)
 
-        // const Projects = post.map((post) => {
-        //   return(
-        //     <div>
-        //       <h2>{post.description}</h2>
-        //     </div>
-        //   );
-        // });
+
 
       } else {
         console.log("Failed to access protected route");
       }
 
     }
-
-
   }
 
   useEffect(() => {
     getData();
-    getPost();
+    getPost(token, setPost);
   }, [token]);
 
   return (
@@ -115,8 +107,6 @@ export default function Profile() {
                       <h2>Category : </h2>
                       {post.title}
                       <p className="mo-bio">
-                        {/* <h3>description : </h3> */}
-                        {/* {data.bio} */}
                       </p>
                     </div>
                     <div className="mo-profile-btn">
@@ -145,11 +135,30 @@ export default function Profile() {
                 </div>
                 <div className="mo-right-side">
                   <div className="mo-right-side-post">
-                    <h2>Your Projects  :- </h2>
-                    <p>{post.description}</p>
-                    <br />
-                    <br />
-                    <p> So the project {post.description} this just a test  </p>
+                    <h1>Projects  :- </h1>
+                    <div>
+                      {post.map((postItem, index) => (
+                         <div className="mo-post-card" key={index}>
+                         <h2 className="mo-post-description">{postItem.title}</h2>
+                         <h2 className="mo-post-description">{postItem.description}</h2>
+                        
+                         <div className="mo-post-actions">
+                           <button
+                             className="mo-delete-button"
+                             onClick={() => handleDelete(postItem.id)}
+                           >
+                             Delete
+                           </button>
+                           <button
+                             className="mo-update-button"
+                             onClick={() => handleUpdate(postItem.id)}
+                           >
+                             Update
+                           </button>
+                         </div>
+                       </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
