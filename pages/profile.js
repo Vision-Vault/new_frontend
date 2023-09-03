@@ -6,6 +6,34 @@ import 'font-awesome/css/font-awesome.min.css';
 
 const baseUrl = process.env.NEXT_PUBLIC_URL
 
+
+async function deletData( idPost) {
+    if (token) {
+      
+      const protectedUrl =  `${baseUrl}/api/v1/cookie_stands/${idPost}`;
+      const protectedOptions = {
+        method: "DELETE",
+        headers: {
+          "Authorization": `Bearer ${token.access}`,
+        },
+      };
+      try {
+        const protectedResponse = await fetch(protectedUrl, protectedOptions);
+        if (protectedResponse.status === 204) {
+          serJson([])
+          getData()
+        } else {
+          console.log("Failed to post data.");
+        }
+      } catch (error) {
+        console.log(`Error: ${error.message}`);
+      }
+    } else {
+      console.log("Token is missing.");
+    }
+  }
+
+
 export default function Profile() {
   const { user, token } = useAuth()
   const [data, setuserdata] = useState({
@@ -14,7 +42,8 @@ export default function Profile() {
     bio: '',
     email: '',
   })
-  const [post, setPost] = useState({
+ 
+  const [post, setPost] = useState([{
     title: '',
     description: '',
     image: '',
@@ -25,7 +54,8 @@ export default function Profile() {
     status: '',
     creator: '',
     category: '',
-  });
+  }]);
+
 
   async function getData() {
     if (token) {
@@ -62,13 +92,41 @@ export default function Profile() {
         const post = await res.json();
         console.log(post)
         setPost(post)
-
-
-
+        // const Projects = post.map((post) => {
+        //   return (
+        //     <div>
+        //       <h2>{post.description}</h2>
+        //     </div>
+        //   );
+        // });
       } else {
         console.log("Failed to access protected route");
       }
 
+    }
+  }
+  async function handleDelete( postItem) {
+    if (token) {
+      const protectedUrl =  baseUrl +`/api/v1/posts/${postItem.id}/`;
+      const protectedOptions = {
+        method: "DELETE",
+        headers: {
+          "Authorization": `Bearer ${token.access}`,
+        },
+      };
+      try {
+        const protectedResponse = await fetch(protectedUrl, protectedOptions);
+        if (protectedResponse.status === 204) {
+          console.log("done ")
+          getPost()
+        } else {
+          console.log("Failed to post data.");
+        }
+      } catch (error) {
+        console.log(`Error: ${error.message}`);
+      }
+    } else {
+      console.log("Token is missing.");
     }
   }
 
@@ -78,7 +136,6 @@ export default function Profile() {
   }, [token]);
 
   return (
-
     <>
       {user ? (
         <>
@@ -105,8 +162,9 @@ export default function Profile() {
                     </p>
                     <div className="mo-user-bio">
                       <h2>Category : </h2>
-                      {post.title}
+                      
                       <p className="mo-bio">
+                      {post.title}
                       </p>
                     </div>
                     <div className="mo-profile-btn">
@@ -137,34 +195,35 @@ export default function Profile() {
                   <div className="mo-right-side-post">
                     <h1>Projects  :- </h1>
                     <div>
-                      {post.map((postItem, index) => (
-                         <div className="mo-post-card" key={index}>
-                         <h2 className="mo-post-description">{postItem.title}</h2>
-                         <h2 className="mo-post-description">{postItem.description}</h2>
-                        
-                         <div className="mo-post-actions">
-                           <button
-                             className="mo-delete-button"
-                             onClick={() => handleDelete(postItem.id)}
-                           >
-                             Delete
-                           </button>
-                           <button
-                             className="mo-update-button"
-                             onClick={() => handleUpdate(postItem.id)}
-                           >
-                             Update
-                           </button>
-                         </div>
-                       </div>
-                      ))}
+                    
+                    {
+                        post.map((postItem, index) => (
+                          <div className="mo-post-card" key={index}>
+                            <h2 className="mo-post-description">{postItem.title}</h2>
+                            <p className="mo-post-description">{postItem.description}</p>
+                            <div className="mo-post-actions">
+                              <button
+                                className="mo-delete-button"
+                                onClick={() => handleDelete(postItem.id)}
+                              >
+                                Delete
+                                </button>
+                                <button
+                                className="mo-update-button"
+                                onClick={() => handleUpdate(postItem.id)}
+                              >
+                                Update
+                              </button>
+                            </div>
+                          </div>
+                        ))
+                        }
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
         </>
       ) : (
         <Login />
