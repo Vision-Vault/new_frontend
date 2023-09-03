@@ -63,8 +63,7 @@ export default function Homeinfo() {
 
       {showNewDiv && (
         <div className="newDiv">
-          <h2>Create your project</h2>
-          <img src="/images/map.png" alt="mm"/>
+             <img src="/images/map.png" alt="mm"/>
           <ProjectForm />
           <button id="cancel" onClick={toggleNewDiv}>
             <i
@@ -76,6 +75,8 @@ export default function Homeinfo() {
               }}
             ></i>
           </button>
+
+
         </div>
       )}
     </div>

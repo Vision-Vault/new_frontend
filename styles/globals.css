@@ -395,8 +395,8 @@ padding:50px;
 }
 
 .newDiv img{
-  display: inline-block;
-  width: 500px;
+  /* display: inline-block; */
+  width: 400px;
   margin-top: -60px;
 }
 
@@ -411,26 +411,79 @@ padding:50px;
   border-style: none;
    outline: none;
     cursor: pointer;
-    /* margin-top: -170px; */
+    /* margin-top: -470px; */
     margin-left: 50%;
 
 }
 /* hussam create */
 .form-overlay{
+  margin-top: -30%;
+  margin-left: 40%;
     display: inline-block;
+background-color: #33333300;
+  width:710px;
+  padding: 20px;
 
-  width:600px;
+  max-height: 100%;
 
 }
-.project-form input{
 
+
+
+
+/*  (label + input) */
+.form-group {
   display: inline-block;
-  margin: 20px;
-
-
+  margin: 10px;
+  text-align: center;
 }
 
+label {
+  display: block;
+  margin-bottom: 5px;
+}
 
+input[type="text"],
+input[type="number"],
+textarea {
+  background-color: #dddddd1f;
+  width: 250px;
+  padding: 10px;
+box-shadow: 0px 0px 05px rgb(236, 234, 234);
+ border-radius: 10px;
+ margin-left: 30px;
+}
+
+button[type="submit"] {
+  background-color: #ffffff13;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Hover effect for the submit button */
+
+#descriptionDiv textarea{
+width: 400px;
+height: 200px;
+resize: none;
+}
+#createsubmit{
+background-color: #4c8787;
+box-shadow: 0px 0px 05px rgb(236, 234, 234);
+  padding: 10px  30px;
+display: inline-block;
+  margin-top: -40px;
+  margin-left: 40px;
+}
+
+#createsubmit:hover {
+  background-color: #ffffff;
+  color:#4c878765;
+}
 
 
 /* hussam create */
@@ -442,7 +495,7 @@ padding:50px;
 .toprated {
    position: relative;
   /* background: linear-gradient(130deg, #4c8787,#4c8787, #f9d370); */
-  background-color: #f3d383;
+  background-color: #ffcaca;
   margin-top: -90px;
   width: 100%;
   height: 600px;
@@ -459,13 +512,13 @@ margin-top: 30px;
 }
 
 .topinfo h1{
-    color: white;
+    color: rgb(10, 10, 10);
 
   display: inline-block;
   margin-top: 20px;
 }
 #topp{
-  color: rgba(255, 255, 255, 0.568);
+  color: rgba(0, 0, 0, 0.568);
   margin-top: -160px;
   font-size: 15px;
   display: inline-block;

@@ -40,46 +40,50 @@ const ProjectForm = () => {
     <>
       <div className="form-overlay">
         <form className="project-form" onSubmit={PostData}>
-          <label htmlFor="title">Title:</label>
-          <input
-            type="text"
-            placeholder="Title"
-            name="title"
-            id="title" 
-          />
+          <div id="titleDiv" className="form-group">
+            <label htmlFor="title">Title</label>
+            <input type="text" placeholder="Title" name="title" id="title" />
+          </div>
 
-          <label htmlFor="description">Description:</label>
-          <textarea
-            placeholder="Description"
-            name="description"
-            id="description"
-          />
+          <div id="fundingGoalDiv" className="form-group">
+            <label htmlFor="funding_goal">Funding Goal</label>
+            <input
+              type="number"
+              placeholder="Funding Goal"
+              name="funding_goal"
+              id="funding_goal"
+            />
+          </div>
+          <div id="categoryDiv" className="form-group">
+            <label htmlFor="category">Category </label>
+            <input
+              type="text"
+              placeholder="Category"
+              name="category"
+              id="category"
+            />
+          </div>
+          <div id="allowedDonorsDiv" className="form-group">
+            <label htmlFor="allowed_donors">Allowed Donors</label>
+            <input
+              type="text"
+              placeholder="Allowed Donors"
+              name="allowed_donors"
+              id="allowed_donors"
+            />
+          </div>
 
-          <label htmlFor="funding_goal">Funding Goal:</label>
-          <input
-            type="number"
-            placeholder="Funding Goal"
-            name="funding_goal"
-            id="funding_goal"
-          />
-
-          <label htmlFor="allowed_donors">Allowed Donors:</label>
-          <input
-            type="text"
-            placeholder="Allowed Donors"
-            name="allowed_donors"
-            id="allowed_donors"
-          />
-
-          <label htmlFor="category">Category:</label>
-          <input
-            type="text"
-            placeholder="Category"
-            name="category"
-            id="category"
-          />
-
-          <button type="submit">Create Project</button>
+          <div id="descriptionDiv" className="form-group">
+            <label htmlFor="description">Description</label>
+            <textarea
+              placeholder="Description"
+              name="description"
+              id="description"
+            />
+          </div>
+          <button id="createsubmit" type="submit" rows="4">
+            Create Project
+          </button>
         </form>
       </div>
     </>
