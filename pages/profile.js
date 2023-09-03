@@ -15,8 +15,16 @@ export default function Profile() {
     email: '',
  })
  const [post,setPost] = useState({
-  description:'',
   title:'',
+  description:'',
+  image:'',
+  video:'',
+  funding_goal:'',
+  allowed_donors:'',
+  rating:'',
+  status:'',
+  creator:'',
+  category:'',
  });
 
   async function getData() {
@@ -54,10 +62,22 @@ export default function Profile() {
         const post = await res.json();
         console.log(post)
         setPost(post)
+
+        // const Projects = post.map((post) => {
+        //   return(
+        //     <div>
+        //       <h2>{post.description}</h2>
+        //     </div>
+        //   );
+        // });
+       
       } else {
         console.log("Failed to access protected route");
       }
+ 
     }
+
+    
   }
 
   useEffect(() => {
@@ -93,7 +113,7 @@ export default function Profile() {
                       <i className="fa fa-envelope"></i> {data.email}
                     </p>
                     <div className="user-bio">
-                      <h3>Bio : </h3>
+                      <h2>Category : </h2>
                       {post.title}
                       <p className="bio">
                         {/* <h3>description : </h3> */}
@@ -106,7 +126,7 @@ export default function Profile() {
                       </button>
                     </div>
                     <div className="user-rating">
-                      <h3 className="rating">4.5</h3>
+                      <h3 className="rating">4.9</h3>
                       <div className="rate">
                         <div className="star-outer">
                           <div className="star-inner">
@@ -118,7 +138,7 @@ export default function Profile() {
                           </div>
                         </div>
                         <span className="no-of-user-rate">
-                          <span>123</span>&nbsp;&nbsp;Posts
+                          <span>120</span>&nbsp;&nbsp;Posts
                         </span>
                       </div>
                     </div>
@@ -128,6 +148,9 @@ export default function Profile() {
                   <div className="right-side-post">
                     <h2>Your Projects  :- </h2>
                     <p>{post.description}</p>
+                    <br/>
+                    <br/>
+                    <p> So the project {post.description} this just a test  </p>
                   </div>
                 </div>
               </div>
@@ -143,6 +166,7 @@ export default function Profile() {
     </>
 
   )
+    
 }
 
 
