@@ -451,8 +451,8 @@ margin-left: 70%;
   display: flex;
   justify-content: space-between;
   background-color: #b1aea7;
-  width:400px;
-  height:300px;
+  width:96%;
+  /* height:300px; */
   border-radius: 15px;
   margin-top: 40px;
 
@@ -462,7 +462,12 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);}
 
 .topposts {
 
-  margin: 0 10px;
+  margin: 10px;
+}
+#toppost1{
+width: 400px;
+    margin: 10px;
+
 }
 
 

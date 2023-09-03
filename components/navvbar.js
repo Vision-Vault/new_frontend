@@ -1,22 +1,25 @@
 import Link from "next/link";
 import { useState } from "react";
-import "typeface-montserrat";
-import 'fontsource-raleway';
-import "font-awesome/css/font-awesome.min.css";
 
 function Navbar() {
+  const categories = [
+    { id: 1, name: "Environmental & Sustainability" },
+    { id: 2, name: "Technology & Innovation" },
+    { id: 3, name: "Health & Medical" },
+    { id: 4, name: "Arts & Culture" },
+    { id: 5, name: "Education" },
+    { id: 6, name: "Community & Social Impact" },
+    { id: 7, name: "Food & Culinary" },
+    { id: 8, name: "Animal Welfare" },
+    { id: 9, name: "Sports & Athletics" },
+    { id: 10, name: "Cultural Preservation" },
+  ];
 
- const categories = [
-   { name: "Category 1", url: "/category1" },
-   { name: "Category 2", url: "/category2" },
-   { name: "Category 3", url: "/category3" },
- ];
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
- const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
- const toggleDropdown = () => {
-   setIsDropdownOpen(!isDropdownOpen);
- };
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <>
@@ -38,9 +41,9 @@ function Navbar() {
                 <i className="fa fa-caret-down" aria-hidden="true"></i>
               </p>
             </span>
-            <div className="dropdown-content">
-              {categories.map((category, index) => (
-                <Link key={index} href={category.url}>
+            <div className={`dropdown-content${isDropdownOpen ? " show" : ""}`}>
+              {categories.map((category) => (
+                <Link key={category.id} href={`/categories/${category.id}`}>
                   {category.name}
                 </Link>
               ))}
@@ -50,8 +53,8 @@ function Navbar() {
           <Link className="navbar-link" href={"/"}>
             Projects
           </Link>
-          <Link className="navbar-link" href={"/"}>
-            about
+          <Link className="navbar-link" href={"/about"}>
+            About
           </Link>
         </div>
         <div className="profilein">

@@ -16,9 +16,12 @@ export default function Toprated() {
           "Authorization": `Bearer ${token.access}`
         }
       };
-        const response = await fetch(`${baseUrl}/api/v1/posts/`,
-        option);
+        const response = await fetch(
+          `${baseUrl}/api/v1/posts/categories/2/`,
+          option
+        );
         const jsonData = await response.json();
+        // console.log(jsonData)
         setData(jsonData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -52,8 +55,15 @@ export default function Toprated() {
           <div className="topposts-container">
             {topPosts.map((item, index) => (
               <div className="topposts" key={index}>
-                <img className="wimg" src={item.image} alt={item.title} />
+              <div id='toppost1'>
+
+              <img className="wimg" src={item.image} alt={item.title} />
                 <h2>{item.title}</h2>
+                </div>
+
+
+
+
               </div>
             ))}
           </div>
@@ -62,6 +72,3 @@ export default function Toprated() {
     </>
   );
 }
-
-
-
