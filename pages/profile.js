@@ -6,8 +6,6 @@ import 'font-awesome/css/font-awesome.min.css';
 
 const baseUrl = process.env.NEXT_PUBLIC_URL
 
-
-
 export default function Profile() {
   const { user, token } = useAuth()
   const [data,setuserdata] = useState({
@@ -16,6 +14,10 @@ export default function Profile() {
     bio: '',
     email: '',
  })
+ const [post,setPost] = useState({
+  description:'',
+  title:'',
+ });
 
   async function getData() {
     if (token) {
@@ -37,9 +39,30 @@ export default function Profile() {
       }
     }
   }
+  async function getPost() {
+    if (token) {
+      
+      const url = "https://new-backend-alpha.vercel.app/api/v1/posts/2/"
+      const option = {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${token.access}`
+        }
+      }
+      const res = await fetch(url, option)
+      if (res.status === 200) {
+        const post = await res.json();
+        console.log(post)
+        setPost(post)
+      } else {
+        console.log("Failed to access protected route");
+      }
+    }
+  }
 
   useEffect(() => {
     getData();
+    getPost();
   }, [token]);
 
   return (
@@ -65,22 +88,21 @@ export default function Profile() {
               <div className="main-bd">
                 <div className="left-side">
                   <div className="profile-side">
-                    <h2>
-                      <p>{data.email}</p>
-                    </h2>
+
                     <p className="user-mail">
-                      <i className="fa fa-envelope"></i> Test@gmail.com
+                      <i className="fa fa-envelope"></i> {data.email}
                     </p>
                     <div className="user-bio">
-                      <h3>Bio</h3>
+                      <h3>Bio : </h3>
+                      {post.title}
                       <p className="bio">
-                        <h3>description : </h3>
-                        {data.bio}
+                        {/* <h3>description : </h3> */}
+                        {/* {data.bio} */}
                       </p>
                     </div>
                     <div className="profile-btn">
                       <button className="createbtn" id="Create-post">
-                        <i className="fa fa-plus"></i> Create
+                        <i className="fa fa-plus"></i> Create Project
                       </button>
                     </div>
                     <div className="user-rating">
@@ -104,8 +126,8 @@ export default function Profile() {
                 </div>
                 <div className="right-side">
                   <div className="right-side-post">
-                    <h1>Your Post :- </h1>
-                    {data.bio}
+                    <h2>Your Projects  :- </h2>
+                    <p>{post.description}</p>
                   </div>
                 </div>
               </div>
