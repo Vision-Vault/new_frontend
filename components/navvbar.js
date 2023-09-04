@@ -30,9 +30,6 @@ function Navbar() {
           <Link className="navbar-link" href={"/"}>
             Home
           </Link>
-          <Link className="navbar-link" href={"/"}>
-            Profile
-          </Link>
 
           <div className="navbar-dropdown">
             <span className="navbar-link">
@@ -50,8 +47,8 @@ function Navbar() {
             </div>
           </div>
 
-          <Link className="navbar-link" href={"/"}>
-            Projects
+          <Link className="navbar-link" href={"/profile"}>
+            Profile
           </Link>
           <Link className="navbar-link" href={"/about"}>
             About
