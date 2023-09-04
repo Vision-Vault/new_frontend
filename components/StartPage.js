@@ -12,7 +12,7 @@ export default function StartPage() {
       <div className="content">
         <h1 >Vision Vault</h1>
 
-        <Link href="/">
+        <Link href="/login">
           <button className="signin-button">Login</button>
         </Link>
       </div>
