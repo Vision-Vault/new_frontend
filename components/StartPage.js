@@ -10,8 +10,10 @@ export default function StartPage() {
         <source src="/images/backgroundVideo.mp4" type="video/mp4" />
       </video>
       <div className="content">
-        <Link  href="/">
-          <button className="signin-button">LogIn</button>
+        <h1 >Vision Vault</h1>
+
+        <Link href="/">
+          <button className="signin-button">Login</button>
         </Link>
       </div>
     </div>
