@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useAuth } from "@/contexts/auth";
+
 const baseUrl = process.env.NEXT_PUBLIC_URL;
 
 export default function Toprated() {

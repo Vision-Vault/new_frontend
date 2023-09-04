@@ -27,7 +27,7 @@ function Navbar() {
         <img src="/images/l11.png" />
         <h1 style={{ fontFamily: "Raleway, sans-serif" }}>Vision Vault</h1>
         <div className="nav-elemnts">
-          <Link className="navbar-link" href={"/"}>
+          <Link className="navbar-link" href={"/mainhome"}>
             Home
           </Link>
 
@@ -40,7 +40,7 @@ function Navbar() {
             </span>
             <div className={`dropdown-content${isDropdownOpen ? " show" : ""}`}>
               {categories.map((category) => (
-                <Link key={category.id} href={`/categories/${category.id}`}>
+                <Link key={category.id} href={`/category/${category.id}`}>
                   {category.name}
                 </Link>
               ))}
@@ -52,6 +52,9 @@ function Navbar() {
           </Link>
           <Link className="navbar-link" href={"/about"}>
             About
+          </Link>
+          <Link className="navbar-link" href={"/contact"}>
+            Contact Us
           </Link>
         </div>
         <div className="profilein">
