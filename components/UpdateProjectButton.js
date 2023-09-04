@@ -5,13 +5,13 @@ import UpdateProjectForm from '@/components/UpdateProjectForm';
 const UpdateProjectButton = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const baseUrl = process.env.NEXT_PUBLIC_URL;
+  const router = useRouter(); 
 
   const handleButtonClick = () => {
     setIsFormOpen(!isFormOpen);
   };
 
-  const projectId = router.query; 
-  const router = useRouter();
+  const projectId = router.query.id || 3; 
   const [projectData, setProjectData] = useState(null);
 
   useEffect(() => {
