@@ -605,3 +605,67 @@ width: 400px;
 
 /* dropdpwn */
 /* narmeen */
+
+
+/* start video */
+
+.start-page {
+    position: relative;
+    grid-area: main;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .start-page .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+  }
+
+  .start-page .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #132A09;
+  }
+
+  .start-page h1 {
+    font-size: 48px;
+    text-shadow: 0 0 7px #fff;
+  }
+  .start-page p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-shadow: 0 0 9px #fff;
+  }
+
+  .start-page .signin-button {
+    background-color: #ffffffd0;
+    color: #4c8787;
+    box-shadow: 0 0 10px  rgb(0, 0, 0);
+    padding: 1rem  5rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-top: 1rem;
+    transition: 0.5s;
+  }
+  .start-page .signin-button:hover{
+    background-color: #FFC9AC;
+        box-shadow: 0 0 10px  #014141;
+
+    color: #132A09;
+  }
+
+/* start video */
