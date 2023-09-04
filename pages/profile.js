@@ -3,12 +3,7 @@ import { useAuth } from "@/contexts/auth"
 import Login from './login';
 import { useEffect, useState } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
-
 const baseUrl = process.env.NEXT_PUBLIC_URL
-
-
-
-
 
 export default function Profile() {
   const { user, token } = useAuth()
@@ -35,7 +30,6 @@ export default function Profile() {
 
   async function getData() {
     if (token) {
-      // const url = baseUrl + `/api/v1/accounts/${user.id}/`
       const url = baseUrl + "/api/v1/accounts/2/"
       const option = {
         method: "GET",
