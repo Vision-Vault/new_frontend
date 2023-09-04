@@ -1,5 +1,5 @@
 {
-  "name": "cookie-stand-admin",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
     "autoprefixer": "10.4.15",
     "font-awesome": "^4.7.0",
     "fontsource-raleway": "^4.0.0",
-    "font-awesome": "^4.7.0",
     "jsonwebtoken": "^9.0.1",
     "next": "13.4.13",
     "postcss": "8.4.27",
