@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useAuth } from "@/contexts/auth"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faKey, faLock, faEnvelope, faUser, faImage, faEye } from '@fortawesome/free-solid-svg-icons'
+import { faKey, faLock, faEnvelope, faUser, faImage, faEye, faCheckSquare } from '@fortawesome/free-solid-svg-icons'
 import { faSquareCheckRegular } from '@fortawesome/free-regular-svg-icons';
 
 
@@ -85,6 +85,56 @@ const Signup = () => {
       setState({ ...state, profile_picture: file });
     };
 
+    const see = () => {
+      const input = document.getElementById("password");
+      const seeButton = document.getElementById("see");
+  
+      if (input.type === "password") {
+        input.type = "text";
+        seeButton.style.color = "#262626";
+      } else {
+        input.type = "password";
+        seeButton.style.color = "gray";
+      }
+    };
+
+      const check = () => {
+        const input = document.getElementById("password").value;
+      
+        document.getElementById("count").innerText = "Length: " + input.length;
+      
+        if (input.length >= 5) {
+          document.getElementById("check0").style.color = "green";
+        } else {
+          let element = document.getElementById("check0");
+          console.log('element', element);
+          element .style.color = "red";
+        }
+      
+        if (input.length <= 10) {
+          document.getElementById("check1").style.color = "green";
+        } else {
+          document.getElementById("check1").style.color = "red";
+        }
+      
+        if (/\d/.test(input)) {
+          document.getElementById("check2").style.color = "green";
+        } else {
+          document.getElementById("check2").style.color = "red";
+        }
+      
+        if (/[^A-Za-z0-9-' ']/.test(input)) {
+          document.getElementById("check3").style.color = "green";
+        } else {
+          document.getElementById("check3").style.color = "red";
+        }
+      
+        if (input.includes(' ')) {
+          document.getElementById("check4").style.color = "red";
+        } else {
+          document.getElementById("check4").style.color = "green";
+        }
+      };
   return (
     <div className="mainContainer"> 
       <div className="signup-form">
@@ -103,52 +153,35 @@ const Signup = () => {
               <input name="email" type="email" placeholder="Email" onChange={handleChange} required/>
             </div>
             <div className="signUp-input">
-              <i className="fa-solid"><FontAwesomeIcon icon={faImage} /></i>
-              <input
-                type="file"
-                accept="image/*"
-                name="profile_picture"
-                onChange={handleProfilePictureChange}
-              />
-            </div>
-            <div className="signUp-input signUp-input-custom">
-              <i className="fa-solid"><FontAwesomeIcon icon={faUser} /></i>
-              <textarea
-                name="bio"
-                placeholder="Bio"
-                onChange={handleChange}
-                rows={4}
-              />
-            </div>
-            <div className="signUp-input">
               <i className="fa-solid"><FontAwesomeIcon icon={faLock} /></i>
               <input name="password" 
+                      id="password"
                       type="password" 
                       placeholder="Password" 
                       onChange={handleChange} 
                       className={passwordMatch ? "password-match" : "password-mismatch" }
-                      /*onInput={check}*/
+                      onInput={check}
                       required/>
               </div>
               <div className='ValidationContainer'>
-              <div id="set" >
-                <div id="count">Length : 0</div>
-                  <i id="see" /*onClick={see}*/ ><FontAwesomeIcon icon={faEye} /></i> 
+              <div id="set" className='set'>
+                <div id="count" className='count'>Length : 0</div>
+                  <i id="see" className='see'onClick={see} ><FontAwesomeIcon icon={faEye} /></i> 
                   </div>
-                    <div id="check0">
-                          <i><FontAwesomeIcon icon={faSquareCheckRegular} /></i>  <span> Length more than 5.</span>
+                    <div id="check0" className='check0'>
+                          <i><FontAwesomeIcon icon={faCheckSquare} /></i>  <span> Length more than 5.</span>
                     </div>
-                    <div id="check1">
-                          <i><FontAwesomeIcon icon="fa-regular fa-square-check" /></i>  <span> Length less than 10.</span>
+                    <div id="check1" className='check1'>
+                          <i><FontAwesomeIcon icon={faCheckSquare} /></i>  <span> Length less than 10.</span>
                     </div>
-                    <div id="check2">
-                          <i><FontAwesomeIcon icon="fa-regular fa-square-check" /></i>  <span> Contains numerical character.</span>
+                    <div id="check2" className='check2'>
+                          <i><FontAwesomeIcon icon={faCheckSquare} /></i>  <span> Contains numerical character.</span>
                     </div>
-                    <div id="check3">
-                          <i><FontAwesomeIcon icon="fa-regular fa-square-check" /></i>   <span>Contains special character.</span>
+                    <div id="check3" className='check3'>
+                          <i><FontAwesomeIcon icon={faCheckSquare} /></i>   <span>Contains special character.</span>
                     </div>
-                    <div id="check4">
-                          <i><FontAwesomeIcon icon="fa-regular fa-square-check" /></i>  <span>Shouldn't contain spaces.</span>
+                    <div id="check4" className='check4'>
+                          <i><FontAwesomeIcon icon={faCheckSquare} /></i>  <span>Shouldn't contain spaces.</span>
                     </div>
             </div>
             <br/>
@@ -165,6 +198,24 @@ const Signup = () => {
             </div>
             <div className={passwordMatch ? "hidden" : "visible" }>
               password does not match
+            </div>
+            <div className="signUp-input">
+              <i className="fa-solid"><FontAwesomeIcon icon={faImage} /></i>
+              <input
+                type="file"
+                accept="image/*"
+                name="profile_picture"
+                onChange={handleProfilePictureChange}
+              />
+            </div>
+            <div className="signUp-input signUp-input-custom">
+              <i className="fa-solid"><FontAwesomeIcon icon={faUser} /></i>
+              <textarea
+                name="bio"
+                placeholder="Bio"
+                onChange={handleChange}
+                rows={4}
+              />
             </div>
             <input className="signup-btn" type="submit" value="SIGN UP" disabled={!passwordMatch}/>
           </form>
