@@ -1,6 +1,8 @@
 import Hhead from '../components/Hhead';
 import { useAuth } from "@/contexts/auth"
 import Login from './login';
+import Home from '@/components/mainhome';
+import StartPage from '@/components/StartPage';
 import UpdateProjectButton from '@/components/UpdateProjectButton';
 import CreateProjectButton from '../components/ButtonCreateProject'
 
@@ -11,18 +13,8 @@ export default function Index() {
   return (
 
     <>
-      {user ? (
-      <>
-      <Hhead data={"Home"} />
-<UpdateProjectButton/>
-      <div>Hello</div>
-      <CreateProjectButton />
-      </>
-      ):(
-        <Login/>
-      )
-    }
-
+<StartPage/>
+     
     </>
 
   )
