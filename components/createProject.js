@@ -28,6 +28,7 @@ const ProjectForm = () => {
       const res = await fetch(url, option)
       if (res.status === 201) {
         console.log(res.status," Done")
+        console.log(res)
       } else {
         console.log("Failed to access protected route");
       }
