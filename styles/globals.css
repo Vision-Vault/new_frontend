@@ -32,10 +32,10 @@ background-color: #ffffff;
 }
 
 .header{
-  background: linear-gradient(130deg, #4c8787,#4c8787, #f9d370);
+  background: linear-gradient(130deg, #014141,#4c8787, #fff);
 padding-bottom: 30px;
-border-bottom-left-radius: 50px;
-border-bottom-right-radius: 50px;
+/* border-bottom-left-radius: 50px; */
+/* border-bottom-right-radius: 50px; */
   z-index: 2;
 
 
@@ -88,11 +88,11 @@ border-bottom-right-radius: 50px;
   font-size: 17px;
 }
 
-#start-button{
+#start-button33{
   font-size: 18px;
 margin-top: 30px;
 margin-left: 30px;
-border-radius: 20px;
+/* border-radius: 20px; */
 padding:10px  70px ;
 border-color: #ffffff;
 border: none;
@@ -202,7 +202,7 @@ margin-top: 60px;
 .features{
   margin-top: -400px;
   margin-left: 10%;
-background-color: #ffffff8f;
+background-color: #fffffff3;
 border-radius: 45px;
   width: 80%;
   height:300px;
@@ -299,8 +299,8 @@ height:200px;
   margin-bottom: 0px;
   padding: 20px 50px;
   border-style: none;
-  border-radius: 40px;
-  background: linear-gradient(130deg, #4c87876b, #4c8787, #f9d370);
+  border-radius: 4px;
+  background: linear-gradient(130deg, #4c87876b, #4c8787, #dad5c8);
     box-shadow: 0 0 15px rgba(8, 8, 8, 0.8);
   z-index: 3;
   position: relative;
@@ -345,9 +345,9 @@ height:200px;
 .newDiv{
   position: relative;
    z-index: 4;
-background: linear-gradient(130deg, #4c8787, #4c8787, #f9d370);
+background: linear-gradient(130deg, #4c8787, #4c8787, #ebebeb);
 width:100%;
-border-radius: 40px;
+border-radius: 4px;
 box-shadow: 0 0 15px rgba(8, 8, 8, 0.8);
  height: 500px;
 margin-top: -105px;
