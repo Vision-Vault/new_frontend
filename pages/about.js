@@ -52,29 +52,7 @@ const AboutPage = () => {
                         </div>
                     </div>
 
-                    <div class="col-lg-4">
-                        <div class="about_content_box_all mt-3">
-                            <div class="about_detail text-center">
-                                <div class="about_icon">
-                                    <i class="fab fa-angellist"><FontAwesomeIcon icon={faHandshake} /></i>
-                                </div>
-                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">Interactivity</h5>
-                                <p class="edu_desc mb-0 mt-3 text-muted">At Vision Vault, we focus on enhancing interactivity for engaging user experiences.</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4">
-                        <div class="about_content_box_all mt-3">
-                            <div class="about_detail text-center">
-                                <div class="about_icon">
-                                    <i class="fas fa-paper-plane"><FontAwesomeIcon icon={faPaperPlane} /></i>
-                                </div>
-                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">best platform </h5>
-                                <p class="edu_desc mb-0 mt-3 text-muted">At Vision Vault, your premier crowdfunding platform for innovation and dreams.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

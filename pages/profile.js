@@ -3,6 +3,8 @@ import { useAuth } from "@/contexts/auth"
 import Login from './login';
 import { useEffect, useState } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
+import PagesNav from '@/components/pagesnav';
+
 const baseUrl = process.env.NEXT_PUBLIC_URL
 
 export default function Profile() {
@@ -13,7 +15,7 @@ export default function Profile() {
     bio: '',
     email: '',
   })
- 
+
   const [post, setPost] = useState([{
     title: '',
     description: '',
@@ -109,8 +111,12 @@ export default function Profile() {
     <>
       {user ? (
         <>
+
           <Hhead data={"Home"} />
+
+<PagesNav/>
           <div className="mo-body1">
+
             <div className="mo-container">
               <div className="mo-profile-header">
                 <div className="mo-profile-img">
@@ -132,7 +138,7 @@ export default function Profile() {
                     </p>
                     <div className="mo-user-bio">
                       <h2>Category : </h2>
-                      
+
                       <p className="mo-bio">
                       {post.title}
                       </p>
@@ -165,7 +171,7 @@ export default function Profile() {
                   <div className="mo-right-side-post">
                     <h1>Projects  :- </h1>
                     <div>
-                    
+
                     {
                         post.map((postItem, index) => (
                           <div className="mo-post-card" key={index}>
@@ -204,7 +210,3 @@ export default function Profile() {
   )
 
 }
-
-
-
-

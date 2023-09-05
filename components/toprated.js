@@ -18,11 +18,11 @@ export default function Toprated() {
         }
       };
         const response = await fetch(
-          `${baseUrl}/api/v1/posts/categories/2/`,
+          `${baseUrl}/api/v1/posts/`,
           option
         );
         const jsonData = await response.json();
-        // console.log(jsonData)
+        console.log(jsonData)
         setData(jsonData);
       } catch (error) {
         console.error("Error fetching data:", error);

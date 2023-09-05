@@ -40,14 +40,15 @@ export default function Login() {
                     placeholder="Password"
                     name="password"
                   />
-                  <button className='login_button' type="submit">Login</button>
+                  <button id="login1" className='login_button1' type="submit">Login</button>
                 </form>
               </div>
+
+              
               <div className="overlay-container">
                 <div className="overlay">
                   <div className="overlay-panel overlay-left">
 
-                    <button className="login_button ghost">Sign In</button>
                   </div>
                   <div className="overlay-panel overlay-right">
                     <h2 className='login_h2'>Hello, Friend!</h2>
