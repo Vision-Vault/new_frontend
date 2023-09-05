@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 import { useAuth } from "@/contexts/auth"
 import Home from './mainhome';
+import Link from 'next/link';
 
 export default function Login() {
   const { login, user, token, logout } = useAuth()

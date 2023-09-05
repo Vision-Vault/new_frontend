@@ -186,6 +186,20 @@
 	gap: 3px;
 }
 
+.ascomments section .oneComment .update{
+	width: 100%;
+}
+
+.ascomments section .oneComment .update textarea {
+	padding: 5px 5px 5px 10px;
+	width: 90%;
+	height: 100px;
+}
+
+.ascomments section .oneComment .update button{
+	color: #333333;
+}
+
 .ascomments section .oneComment .button {
 	display: flex;
 	justify-content: flex-end;
