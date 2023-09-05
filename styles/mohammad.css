@@ -430,3 +430,31 @@
   
 	  
   /* end profile-page css style */
+
+
+  /* category style  */
+  #card_mo{
+	background-color: #F3F6FF;
+	
+    display: flex;
+    align-content: center;
+    grid-template-columns: min-content;
+    flex-wrap: wrap;
+    justify-content: center;
+	
+}
+  
+  #moh_card_inside{
+	background-color: #f9d270da;
+	width: 400px;
+	height: 200px;
+	margin: 20px;
+	
+	display:inline-block;
+	border-radius: 5px;
+	padding: 15px;
+	/* line-height: 170%; */
+  }
+
+
+ 
