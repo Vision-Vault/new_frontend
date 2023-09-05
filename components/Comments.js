@@ -10,7 +10,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Comments({ handel, del, data, getReply }) {
+export default function Comments({ handel, del, data, getReply, updateComment }) {
     const dat = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     const { user, token } = useAuth()
     const [visable, setVisable] = useState(false)
@@ -18,11 +18,24 @@ export default function Comments({ handel, del, data, getReply }) {
         event.preventDefault();
         const dataToSave = {
             "body": event.target.comment.value,
-            "project": 1,
+            "project": 4,
             "user": user.id
         };
 
         handel(dataToSave)
+        event.target.reset();
+    }
+
+    function updatehandeler(event) {
+        event.preventDefault();
+        const dataToSave = {
+            "body": event.target.comme.value,
+            "project": 4,
+            "user": user.id
+        };
+
+        updateComment(dataToSave)
+        setVisable(false)
         event.target.reset();
     }
 
@@ -59,16 +72,16 @@ export default function Comments({ handel, del, data, getReply }) {
                                             leaveTo="transform opacity-0 scale-95">
                                             <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                 <div className="py-1">
-                                                    <Menu.Item className="choice" >
+                                                    <Menu.Item className="choice" onClick={() => (setVisable(true))} >
                                                         {({ active }) => (
                                                             <a className={
-                                                                classNames( active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm')
+                                                                classNames(active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm')
                                                             }> Edit </a>
                                                         )}
                                                     </Menu.Item>
                                                 </div>
                                                 <div className="py-1">
-                                                    <Menu.Item className="choice" onClick={()=>del(1,1)} >
+                                                    <Menu.Item className="choice" onClick={() => del(1, 1)} >
                                                         {({ active }) => (
                                                             <a className={
                                                                 classNames(active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -82,13 +95,27 @@ export default function Comments({ handel, del, data, getReply }) {
                                     </Menu>
 
                                 </div>
-                                here is a comment Description: A building architect is a professional who
-                                designs and plans buildings and other structures. They
-                                work on the aesthetic, functional, and safety aspects
-                                of a construction project.
-                                <div className="button">
-                                    <button onClick={getReply}  ><strong>Reply</strong></button>
-                                </div>
+                                {visable ? (
+                                    <form className="update" method="post" onSubmit={updatehandeler} >
+                                        <textarea name="comme">here is a comment Description: A building architect is a professional who
+                                            designs and plans buildings and other structures. They
+                                            work on the aesthetic, functional, and safety aspects
+                                            of a construction project</textarea>
+                                        <div className="button">
+                                            <button type="submit" name="comme" ><strong>Update</strong></button>
+                                        </div>
+                                    </form>
+                                ) : (
+                                    <>
+                                        here is a comment Description: A building architect is a professional who
+                                        designs and plans buildings and other structures. They
+                                        work on the aesthetic, functional, and safety aspects
+                                        of a construction project.
+                                        <div className="button">
+                                            <button onClick={getReply}  ><strong>Reply</strong></button>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
                     )

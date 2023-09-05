@@ -60,7 +60,81 @@ export default function PostDetails({ data }) {
         }
     }
 
-    async function deletData(idComment,idPost) {
+
+    async function getComments(id) {
+        if (token) {
+            const url = baseUrl + `/api/v1/comments/${id}/`
+            const option = {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token.access}`
+                }
+
+            }
+            const res = await fetch(url, option)
+            if (res.status === 200) {
+                console.log(res.status)
+                const data = await res.json();
+                serComments([])
+                data.forEach((value) => {
+                    serComments((json) => [...json, value])
+                });
+
+            } else {
+                console.log("Failed to access protected route.");
+            }
+        }
+
+    }
+
+    async function getReplys(id) {
+        if (token) {
+            const url = baseUrl + `/api/v1/comments/child-comments/${id}/`
+            const option = {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token.access}`
+                }
+            }
+            const res = await fetch(url, option)
+            if (res.status === 200) {
+                console.log(res.status)
+                const data = await res.json();
+                serReplys([])
+                data.forEach((value) => {
+                    serReplys((json2) => [...json2, value])
+                });
+
+            } else {
+                console.log("Failed to access protected route.");
+            }
+        }
+
+    }
+
+    useEffect(() => {
+        getComments();
+    }, [token]);
+
+    async function updateComment(id, comment) {
+        let url = baseUrl + `/api/v1/comments/detail/${id}/`;
+        const option = {
+            method: "PUT",
+            body: JSON.stringify(comment),
+            headers: {
+                "Authorization": `Bearer ${token.access}`,
+                "Content-Type": "application/json"
+            }
+
+        }
+        let response = await fetch(url, option)
+        if (response.status === 201) {
+            console.log(response.status)
+            getComments();
+        }
+    }
+
+    async function deletData(idComment, idPost) {
         if (token) {
 
             const URL = `${baseUrl}/api/v1/comments/detail/${idComment}/`;
@@ -100,7 +174,7 @@ export default function PostDetails({ data }) {
                 const res = await fetch(URL, option);
                 if (res.status === 204) {
                     console.log(res.status)
-                    // getData()
+                    getReplys()
                 } else {
                     console.log("Failed to delete reply");
                 }
@@ -112,62 +186,6 @@ export default function PostDetails({ data }) {
         }
     }
 
-    async function getComments(id) {
-        if (token) {
-            const url = baseUrl + `/api/v1/comments/${id}/`
-            const option = {
-                method: "GET",
-                headers: {
-                    "Authorization": `Bearer ${token.access}`
-                }
-
-            }
-            const res = await fetch(url, option)
-            if (res.status === 200) {
-                console.log(res.status)
-                const data = await res.json();
-                serComments([])
-                data.forEach((value) => {
-                    serComments((json) => [...json, value])
-                });
-
-            } else {
-                console.log("Failed to access protected route.");
-            }
-        }
-
-    }
-
-    async function getReplys(id) {
-        if (token) {
-            const url = baseUrl + `/api/v1/comments/child-comments/${id}/`
-            const option = {
-                method: "GET",
-                headers: {
-                    "Authorization": `Bearer ${token.access}`
-                }
-
-            }
-            const res = await fetch(url, option)
-            if (res.status === 200) {
-                console.log(res.status)
-                const data = await res.json();
-                serReplys([])
-                data.forEach((value) => {
-                    serReplys((json2) => [...json2, value])
-                });
-
-            } else {
-                console.log("Failed to access protected route.");
-            }
-        }
-
-    }
-
-    useEffect(() => {
-        getComments();
-      }, [token]);
-
 
     return (
         <>
@@ -177,7 +195,7 @@ export default function PostDetails({ data }) {
                     <div className='aseel_container'>
                         <div className='aseel_main' >
                             <PostDetail data={data} />
-                            <Comments handel={PostComment} del={deletData} data={comments} getReply={getReplys} />
+                            <Comments handel={PostComment} del={deletData} data={comments} getReply={getReplys} updateComment={updateComment} />
                             <Reply handel={PostReply} del={deletReply} data={replys} />
                             <Advertisement />
                         </div>
