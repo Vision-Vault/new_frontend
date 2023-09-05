@@ -340,6 +340,12 @@ footer a {
   font-size: 16px;
 }
 
+.signUp-input-custom i {
+	top:unset;
+	transform: unset;
+	margin-top: 9px;
+}
+
 .signup-btn {
   width: 100%;
   border: none;
@@ -400,6 +406,54 @@ padding: 10px;
 width: 400px;
 text-align: left;
 border-radius: 10px;
+}
+
+.set
+{
+    display:block ;
+    position:relative;
+    margin:auto;
+}
+
+.count
+{
+   display:inline-block;
+   position:relative ;
+   margin:4%; margin-bottom:2%;
+   color:#000; font-size:17px;
+   text-indent:40px;
+   font-weight:bolder;
+   
+}
+.see
+{
+    display:inline-block;
+    color:gray;
+    margin:auto; 
+    float: right;
+    margin-right:40px;
+    margin-top:10px;
+    cursor:pointer; 
+    transition-duration:0.2s;
+}
+.check0,.check1,.check2,.check3,.check4
+{
+   display:block;
+   position:relative;
+   margin:4%;
+   color:red; font-size:15px;
+   width:92% ;
+   
+}
+
+.ValidationContainer i {
+	font-size:15px;
+    transition-duration:600ms;    
+	}
+
+.ValidationContainer span{
+	margin:10px;
+	font-weight: bold;
 }
 /* end sign up page styles */
 
