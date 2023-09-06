@@ -22,9 +22,10 @@ export default function Home() {
           <Header />
 
           {/* <Features/> */}
-          <Toprated />
+
           <Homeinfo />
        <NFeatures/>
+         <Toprated />
           <Footer />
         </>
       ) : (
