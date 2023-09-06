@@ -9,12 +9,10 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
         id="footer2"
         className="container mx-auto flex justify-between items-center"
       >
-        <div id="footervv" className="text-lg font-semibold">
+        <div id="footervv" >
           VisionVault
         </div>
-        <p id="footerdate" className="text-center">
-          &copy; {new Date().getFullYear()} VisionVault. All Rights Reserved.
-        </p>
+
         <div id="footernum" className="text-lg">
           <p>Phone: +1 (123) 456-7890</p>
           <p>Email: contactvision@gmail.com</p>
@@ -27,7 +25,13 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
         >
           <FontAwesomeIcon icon={faGithub} size="2x" />
         </a>
+
       </div>
+
+      <div id="linefooter"></div>
+      <p id="footerdate" className="text-center">
+          &copy; {new Date().getFullYear()} VisionVault. All Rights Reserved.
+        </p>
     </footer>
   );
 }
