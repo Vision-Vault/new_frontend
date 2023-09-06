@@ -1,21 +1,23 @@
-
-
-
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-function Footer() {
+ export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-10">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-lg font-semibold">Your Company Name</div>
-        <p>
+    <footer id="footer" className="bg-gray-800 text-white py-10">
+      <div
+        id="footer2"
+        className="container mx-auto flex justify-between items-center"
+      >
+        <div id="footervv" className="text-lg font-semibold">
+          VisionVault
+        </div>
+        <p id="footerdate" className="text-center">
           &copy; {new Date().getFullYear()} VisionVault. All Rights Reserved.
         </p>
-        <div className="text-lg">
+        <div id="footernum" className="text-lg">
           <p>Phone: +1 (123) 456-7890</p>
-          <p>Email: contact@example.com</p>
+          <p>Email: contactvision@gmail.com</p>
         </div>
         <a
           href="https://github.com/yourgithubusername"
@@ -29,5 +31,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

@@ -290,8 +290,8 @@ margin-bottom: 30px;
     margin-bottom: 0px;
     padding: 20px 50px;
     border-style: none;
-    border-radius: 40px;
-    background: linear-gradient(130deg, #4c87876b, #4c8787, #f9d370);
+    border-radius: 20px;
+    background: linear-gradient(130deg, #4c87876b, #4c8787, #e2e2e2);
     box-shadow: 0 0 15px rgba(8, 8, 8, 0.8);
     z-index: 3;
     position: relative;
@@ -432,16 +432,39 @@ button[type="submit"] {
 /* hussam create */
 /* homenew */
 /* toprated posts */
+
+
+#linetoprated{
+
+     background-image:linear-gradient(90deg, #07092c,
+  #4c8787, rgba(102, 95, 73, 0.055));
+  height:0.1rem;
+  width: 70%;
+   display: inline-block;
+margin-left: 9px;
+}
+
+#lineh1{
+
+ font-size: 40px;
+    color: rgb(6, 12, 43);
+    margin-bottom: 80px;
+     display: inline-block;
+
+}
 .toprated {
-    position: relative;
-    background: linear-gradient(130deg, #4c8787, #4c8787, #f9d370);
-    margin-top: -90px;
-    width: 100%;
-    height: 600px;
-    /* text-align: center; */
-    display: inline-block;
-    z-index: 0;
-    padding: 30px;
+    /* position: relative; */
+    /* background: gray; */
+    margin:20px;
+    width: 90%;
+    text-align: center;
+    border-left: #0a1a1a;
+        border-right: #0a1a1a;
+        margin-left: 70px;
+
+    /* display: inline-block; */
+    /* z-index: 0; */
+    /* padding: 30px; */
 }
 
 .topinfo {
@@ -463,114 +486,35 @@ button[type="submit"] {
 }
 
 .topposts-container {
-    display: flex;
+     display: flex;
     justify-content: space-between;
-    background-color: #f3d383;
-    width: 400px;
-    height: 300px;
+    flex-wrap: wrap;
+    /* background-color: #bebebc; */
+
     border-radius: 15px;
-    margin-top: 40px;
-}
-
-.wimg:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.topposts {
-    margin: 0 10px;
-}
-
-/* toprated posts */
-.toprated {
-    position: relative;
-    /* background: linear-gradient(130deg, #4c8787,#4c8787, #f9d370); */
-    background-color: #968f8f00;
-    margin-top: -90px;
-    margin-left: 10%;
-    /* width: 100%; */
-    height: 800px;
-    /* text-align: center; */
-    display: inline-block;
-    z-index: 0;
-    padding: 30px;
-}
-
-.topinfo {
-    margin-top: 30px;
-}
-
-.topinfo h1 {
-    color: rgb(10, 10, 10);
-    font-family: Geneva, Verdana, sans-serif;
-    display: inline-block;
-    margin-top: 20px;
-}
-
-#topp {
-    font-family: Geneva, Verdana, sans-serif;
-    color: rgba(0, 0, 0, 0.568);
-    margin-top: -160px;
-    font-size: 15px;
-    display: inline-block;
-    margin-left: 50%;
-}
-
-.topposts-container {
-    display: flex;
-    justify-content: space-between;
-    background-color: #b1aea7;
-    /* width:96%; */
-    /* height:300px; */
-    border-radius: 15px;
-    margin-top: 40px;
-}
-
-.wimg:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.topposts {
-    display: inline-block;
-    margin: 0px;
-}
-
-#toppost1 {
-    display: inline-block;
-    width: 400px;
-    /* margin: 10px; */
-}
-
-/* category toprated */
-.topposts img {
-    width: 250px;
-    height: 200px;
-    /* text-align: center; */
-}
-
-.topposts h1 {
-    color: rgb(28, 66, 64);
-    font-size: 22px;
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    /* text-align: center; */
-}
-
-.topposts {
-    text-align: center;
-    display: inline-block;
-    margin: 30px;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.301);
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    position: relative;
-    overflow: hidden;
+    margin: 40px;
+      display: flex;
+    align-content: center;
+    /* grid-template-columns: min-content; */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .topposts:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(11, 71, 88, 0.5);
 }
+
+.topposts {
+        box-shadow: 0 0 10px rgba(12, 11, 5, 0.5);
+
+    /* background-color: #1a424265; */
+    border-radius: 10px;
+    padding: 20px;
+    margin:20px 50px;
+    width: 300px;
+    font-size: 25px;
+    }
+
 
 /* category */
 /* toprated posts */
@@ -673,3 +617,5 @@ button[type="submit"] {
 }
 
 /* Narmeen Style Start*/
+
+/* footer */

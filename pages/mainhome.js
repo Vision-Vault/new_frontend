@@ -1,9 +1,13 @@
 import Hhead from '../components/Hhead';
 import Header from '@/components/header';
-import Footer from '@/components/footer'
+import Footer from '@/components/footer';
 import Homeinfo from '@/components/homeinfo';
 import Toprated from '@/components/toprated';
+import Features from '@/components/features';
+
 import Login from './login';
+
+
 import { useAuth } from '@/contexts/auth';
 
 export default function Home() {
@@ -15,8 +19,10 @@ export default function Home() {
         <>
           <Hhead data="start page" />
           <Header />
-          <Homeinfo />
+          {/* <Features/> */}
           <Toprated />
+          <Homeinfo />
+
           <Footer />
         </>
       ) : (
