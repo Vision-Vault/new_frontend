@@ -10,7 +10,10 @@ export default function StartPage() {
         <source src="/images/backgroundVideo.mp4" type="video/mp4" />
       </video>
       <div className="content">
-        <h1 >Vision Vault</h1>
+        {/* <img id="startpageimg" src="/images/vvlogo.png/" alt="vvlogo"></img> */}
+        <h1 style={{
+          fontFamily:'monospace'
+        }} >Vision Vault</h1>
 
         <Link href="/login">
           <button className="signin-button">Login</button>

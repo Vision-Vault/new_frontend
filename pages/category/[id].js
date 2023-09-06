@@ -5,6 +5,9 @@ import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import Login from "../login";
 import Link from "next/link";
+import PagesNav from "@/components/pagesnav";
+
+import Footer from "@/components/footer";
 const baseUrl = process.env.NEXT_PUBLIC_URL;
 
 
@@ -49,7 +52,7 @@ export default function Category() {
     <>
       {user ? (
         <>
-
+<PagesNav/>
           <Hhead data={"Category"} />
 
 
@@ -73,7 +76,7 @@ export default function Category() {
             ))}
 
           </div>
-
+<Footer/>
         </>
       ) : (
         <Login />

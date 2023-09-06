@@ -137,11 +137,11 @@ i.fa-google {
 	color: #6366f1;
 	text-decoration: none;
   }
-  
+
   .password-match {
 	border: 1px solid green !important;
   }
-  
+
   .password-mismatch {
 	border: 1px solid red !important;
   }
@@ -169,17 +169,17 @@ border-radius: 10px;
    color:#000; font-size:17px;
    text-indent:40px;
    font-weight:bolder;
-   
+
 }
 .see
 {
     display:inline-block;
     color:gray;
-    margin:auto; 
+    margin:auto;
     float: right;
     margin-right:40px;
     margin-top:10px;
-    cursor:pointer; 
+    cursor:pointer;
     transition-duration:0.2s;
 }
 .check0,.check1,.check2,.check3,.check4
@@ -189,12 +189,12 @@ border-radius: 10px;
    margin:4%;
    color:red; font-size:15px;
    width:92% ;
-   
+
 }
 
 .ValidationContainer i {
 	font-size:15px;
-    transition-duration:600ms;    
+    transition-duration:600ms;
 	}
 
 .ValidationContainer span{
@@ -206,6 +206,11 @@ border-radius: 10px;
 
 
 /* start about us page styles */
+
+
+#about{
+  text-decoration: none;
+}
 
 .about_link a, a:hover, a:focus, a:active {
     text-decoration: none;

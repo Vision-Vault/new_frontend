@@ -52,7 +52,7 @@ export default function Login() {
                     name="username"
                   />
                   <input
-                    id="inputlogin"
+                    id="inputlogin2"
                     className="login_input"
                     type="password"
                     placeholder="Password"
