@@ -464,5 +464,11 @@ border-radius: 20px;
     width: 300px;
     border: 1px solid #007b5e46;
 	border-radius: 5px;
-	
+
+}
+
+.login_button1{
+
+	margin-top: 47px;
+	width:160px
 }
