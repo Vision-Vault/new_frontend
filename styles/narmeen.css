@@ -21,7 +21,7 @@ margin-bottom: 30px;
 .header {
     background: linear-gradient(130deg, #4c8787, #4c8787, #f0dfb4);
     padding-bottom: 30px;
-    /* height: 700px; */
+    height: 700px;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
     z-index: 2;
@@ -199,12 +199,19 @@ margin-bottom: 30px;
 }
 
 .features {
-    margin-top: -400px;
+    margin-top: 100px;
     margin-left: 10%;
-    background-color: #ffffff8f;
-    border-radius: 45px;
+    margin-bottom: 19px;
+    background-color: #ffffff;
+    border-radius: 10px;
     width: 80%;
     height: 300px;
+    box-shadow: 0 0 10px #4c8787;
+    /* border: solid;
+    border-top: #62cccc23;
+        border-bottom: #01414123;
+    border-right: #01414123; */
+
 }
 
 .feature {

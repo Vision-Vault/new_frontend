@@ -4,6 +4,7 @@ import Footer from '@/components/footer';
 import Homeinfo from '@/components/homeinfo';
 import Toprated from '@/components/toprated';
 import Features from '@/components/features';
+import NFeatures from '@/components/nfeatures';
 
 import Login from './login';
 
@@ -19,10 +20,11 @@ export default function Home() {
         <>
           <Hhead data="start page" />
           <Header />
+
           {/* <Features/> */}
           <Toprated />
           <Homeinfo />
-
+       <NFeatures/>
           <Footer />
         </>
       ) : (
