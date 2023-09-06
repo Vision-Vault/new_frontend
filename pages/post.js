@@ -11,10 +11,36 @@ import Footer from "@/components/footer";
 
 const baseUrl = process.env.NEXT_PUBLIC_URL
 
-export default function PostDetails({ data }) {
+export default function PostDetails() {
+    let id = 14
     const { user, token } = useAuth()
     const [comments, serComments] = useState([])
     const [replys, serReplys] = useState([])
+    const [project, setData] = useState([])
+    const [activeComment,setActiveComment]= useState(0)
+
+    async function getPost(id) {
+        if (token) {
+            const url = baseUrl + `/api/v1/posts/${id}/`
+            const option = {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token.access}`
+                }
+
+            }
+            const res = await fetch(url, option)
+            if (res.status === 200) {
+                console.log(res.status)
+                const data = await res.json();
+                setData(data)
+            } else {
+                console.log("Failed to access protected route.");
+            }
+        }
+
+    }
+
 
     async function PostComment(comment) {
         if (token) {
@@ -32,6 +58,7 @@ export default function PostDetails({ data }) {
             const res = await fetch(url, option)
             if (res.status === 201) {
                 console.log(res.status)
+                getComments(comment.project)
 
             } else {
                 console.log("Failed to access protected route.");
@@ -41,7 +68,7 @@ export default function PostDetails({ data }) {
 
     async function PostReply(reply) {
         if (token) {
-            const url = baseUrl + `/api/v1/comments/child-comments/${1}/`
+            const url = baseUrl + `/api/v1/comments/child-comments/${reply.parent_comment}/`
 
             const option = {
                 method: "POST",
@@ -55,6 +82,7 @@ export default function PostDetails({ data }) {
             const res = await fetch(url, option)
             if (res.status === 201) {
                 console.log(res.status)
+                getReplys(reply.parent_comment)
 
             } else {
                 console.log("Failed to access protected route.");
@@ -115,10 +143,11 @@ export default function PostDetails({ data }) {
     }
 
     useEffect(() => {
-        getComments();
+        getPost(id);
+        getComments(id);
     }, [token]);
 
-    async function updateComment(id, comment) {
+    async function updateComment(comment,id,idPost) {
         let url = baseUrl + `/api/v1/comments/detail/${id}/`;
         const option = {
             method: "PUT",
@@ -130,9 +159,27 @@ export default function PostDetails({ data }) {
 
         }
         let response = await fetch(url, option)
-        if (response.status === 201) {
+        if (response.status === 200) {
             console.log(response.status)
-            getComments();
+            getComments(idPost);
+        }
+    }
+
+    async function updateReplay(comment,id,commentId) {
+        let url = baseUrl + `/api/v1/comments/child-detail/${id}/`;
+        const option = {
+            method: "PUT",
+            body: JSON.stringify(comment),
+            headers: {
+                "Authorization": `Bearer ${token.access}`,
+                "Content-Type": "application/json"
+            }
+
+        }
+        let response = await fetch(url, option)
+        if (response.status === 200) {
+            console.log(response.status)
+            getReplys(commentId);
         }
     }
 
@@ -162,7 +209,7 @@ export default function PostDetails({ data }) {
         }
     }
 
-    async function deletReply(idReply) {
+    async function deletReply(idReply, idComment) {
         if (token) {
 
             const URL = `${baseUrl}/api/v1/comments/child-detail/${idReply}/`;
@@ -175,8 +222,7 @@ export default function PostDetails({ data }) {
             try {
                 const res = await fetch(URL, option);
                 if (res.status === 204) {
-                    console.log(res.status)
-                    getReplys()
+                    getReplys(idComment)
                 } else {
                     console.log("Failed to delete reply");
                 }
@@ -185,6 +231,30 @@ export default function PostDetails({ data }) {
             }
         } else {
             console.log("Token is missing.");
+        }
+    }
+
+    async function Postdonation(done,postId) {
+        if (token) {
+            const url = baseUrl + `/api/v1/posts/${postId}/donate/`
+
+            const option = {
+                method: "POST",
+                body: JSON.stringify(done),
+                headers: {
+                    "Authorization": `Bearer ${token.access}`,
+                    "Content-Type": "application/json"
+                }
+
+            }
+            const res = await fetch(url, option)
+            if (res.status === 201) {
+                console.log(res.status)
+                getPost(postId)
+
+            } else {
+                console.log("Failed to access protected route.");
+            }
         }
     }
 
@@ -197,9 +267,9 @@ export default function PostDetails({ data }) {
                     <Hhead data={"Post Detail"} />
                     <div className='aseel_container'>
                         <div className='aseel_main' >
-                            <PostDetail data={data} />
-                            <Comments handel={PostComment} del={deletData} data={comments} getReply={getReplys} updateComment={updateComment} />
-                            <Reply handel={PostReply} del={deletReply} data={replys} />
+                            <PostDetail data={project} donation={Postdonation} />
+                            <Comments handel={PostComment} del={deletData} data={comments} getReply={getReplys} updateComment={updateComment} postId={id} activate={setActiveComment} />
+                            <Reply handel={PostReply} del={deletReply} data={replys} updateReplay={updateReplay} commentId={activeComment} />
                             <Advertisement />
                         </div>
                     </div>
