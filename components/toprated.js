@@ -56,9 +56,9 @@ export default function Toprated() {
         <div className="topposts-container">
           {topPosts.map((item, index) => (
             <div className="topposts" key={index}>
-              <Link href={"/"}>
+              <Link href={`/post/${item.id}`}>
                 <div id="toppost1">
-                  <img className="wimg" src={item.image} alt={item.title} />
+                  <img className="wimg" src={item.image} alt='image' />
                   <h2>{item.title}</h2>
                 </div>
               </Link>
