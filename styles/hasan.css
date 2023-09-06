@@ -304,6 +304,16 @@ border-radius: 20px;
 
 
 
+.visible {
+	font-size: 15px;
+	display: block;
+	color: red;
+}
+
+.hidden {
+	display: none;
+}
+
 /* ---login styling end --- */
 
 /* contact page style start */

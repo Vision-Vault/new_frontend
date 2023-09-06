@@ -3,16 +3,26 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 import { useAuth } from "@/contexts/auth"
 import Home from './mainhome';
+import { useState } from 'react';
 import Link from 'next/link';
+let hasError = false;
+
 
 export default function Login() {
   const { login, user, token, logout } = useAuth()
+  const [hasError, setHasError] = useState(false);
 
-  function loginhandiler(event) {
+  async function loginhandiler(event) {
     event.preventDefault();
-    login(event.target.username.value, event.target.password.value)
-    event.target.reset();
+    let result = await login(event.target.username.value, event.target.password.value);
 
+    if (result !== 200) {
+      console.log(result);
+      setHasError(true);
+      console.log('hasError', hasError)
+    }
+
+    event.target.reset();
   }
   return (
     <>
@@ -48,9 +58,10 @@ export default function Login() {
                     placeholder="Password"
                     name="password"
                   />
-                  <button id="login1" className="login_button1" type="submit">
-                    Login
-                  </button>
+                  <button id="login1" className='login_button1' type="submit">Login</button>
+
+                  <div className={hasError ? "visible" : "hidden"}>Login Failed: Incorrect Email or Password</div>
+                  <button className='login_button' type="submit">Login</button>
                 </form>
               </div>
 

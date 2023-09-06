@@ -53,12 +53,21 @@ const Signup = () => {
         return;
       }
 
-      const response = await fetch('https://new-backend-alpha.vercel.app/api/v1/accounts/', {
+      //prepare request data
+      const data = new FormData()
+      const input = document.querySelector('input[type="file"]')
+      data.append('file', input.files[0])
+      state.profile_picture =input.files[0].name
+
+      for (const [key, value] of Object.entries(state)) {
+        data.append(key, value)
+      }
+      
+
+      const response = await fetch('https://new-backend-o9uj64z4d-group-1-final-project.vercel.app/api/v1/accounts/', {
         method: 'POST',
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(state),
+        body: data,
+        // body: JSON.stringify(state),
       });
 
       if (response.ok) {
@@ -81,9 +90,10 @@ const Signup = () => {
     console.log("type:",typeof(passwordMatch))
 
     const handleProfilePictureChange = event => {
-      const file = event.target.files[0]; 
+      const file = event.target.files[0];
       setState({ ...state, profile_picture: file });
     };
+    
 
     const see = () => {
       const input = document.getElementById("password");
@@ -143,7 +153,7 @@ const Signup = () => {
             <h1>Create an Account</h1>
             <p className="signUp-p">Get started for free!</p>
           </div>
-          <form onSubmit={handleSubmit}> 
+          <form onSubmit={handleSubmit} > 
             <div className="signUp-input">
               <i className="fa-solid"><FontAwesomeIcon icon={faUser} /></i>
               <input name="username" type="text" placeholder="Username" onChange={handleChange} required/>
@@ -205,7 +215,8 @@ const Signup = () => {
                 type="file"
                 accept="image/*"
                 name="profile_picture"
-                onChange={handleProfilePictureChange}
+                multiple                
+                // onChange={handleProfilePictureChange}
               />
             </div>
             <div className="signUp-input signUp-input-custom">
