@@ -4,6 +4,7 @@ import { useAuth } from "@/contexts/auth";
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import Login from "../login";
+import Link from "next/link";
 const baseUrl = process.env.NEXT_PUBLIC_URL;
 
 
@@ -50,13 +51,14 @@ export default function Category() {
         <>
 
           <Hhead data={"Category"} />
-  
 
-            <div id="card_mo" class="bg-gray-100">
-              {data && data.map((categorieItem, index) => (
 
-                <div id="moh_card_inside" key={index}>
+          <div id="card_mo" class="bg-gray-100">
 
+            {data && data.map((categorieItem, index) => (
+
+              <div id="moh_card_inside" key={index}>
+                <Link href={`/post/${categorieItem.id}`}>
                   <p class="post-text text-gray-700 font-extrabold">{categorieItem.title}</p>
                   <br />
 
@@ -66,12 +68,11 @@ export default function Category() {
                       ? `${categorieItem.description.substring(0, 200)}...`
                       : categorieItem.description}
                   </p>
+                </Link>
+              </div>
+            ))}
 
-                </div>
-
-
-              ))}
-            </div>
+          </div>
 
         </>
       ) : (
