@@ -53,6 +53,7 @@
   background-color: #f3f4f6;
   color: #1f2937;
   font-size: 16px;
+  margin-left: 0px;
 }
 
 .signUp-input input::placeholder {
@@ -67,6 +68,7 @@
 	background-color: #f3f4f6;
 	color: #1f2937;
 	font-size: 16px;
+  margin-left: 0px;
   }
 
 .signUp-input textarea::placeholder {
@@ -204,17 +206,10 @@ border-radius: 10px;
 
 
 /* start about us page styles */
-h1, h2, h3, h4, h5, h6 {
-    color: #2c3145;
-}
+
 .about_link a, a:hover, a:focus, a:active {
     text-decoration: none;
     outline: none;
-}
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
 .section_all {

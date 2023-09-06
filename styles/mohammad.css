@@ -3,18 +3,18 @@
 /* profile page css style  */
 
 .mo-body1 {
-	position: fixed;
+	/* position: fixed; */
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	/* width: 100%; */
+	/* height: 100%; */
 	background: #cfc8c8;
-	overflow-x: hidden;
-	padding-top: 90px;
+	/* overflow-x: hidden; */
+	/* padding-top: 90px; */
 	font-family: "Poppins", sans-serif;
 	margin: 0;
   }
-  
+
   .mo-profile-header {
 	background: #a0a0a0;
 	width: 100%;
@@ -23,13 +23,13 @@
 	position: relative;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
   }
-  
+
   .mo-profile-img {
 	float: left;
 	width: 340px;
 	height: 200px;
   }
-  
+
   .mo-profile-img img {
 	border-radius: 50%;
 	height: 230px;
@@ -42,7 +42,7 @@
 	z-index: 5;
 	background: #fff;
   }
-  
+
   .mo-profile-nav-info {
 	float: left;
 	display: flex;
@@ -50,20 +50,20 @@
 	justify-content: center;
 	padding-top: 60px;
   }
-  
+
   .mo-profile-nav-info h3 {
 	font-variant: small-caps;
 	font-size: 2rem;
 	font-family: sans-serif;
 	font-weight: bold;
   }
-  
+
   .mo-profile-nav-info .address {
 	display: flex;
 	font-weight: bold;
 	color: #777;
   }
-  
+
   .mo-profile-nav-info .address p {
 	margin-right: 5px;
   }
@@ -78,7 +78,7 @@
 	padding-left: 20px;
 	padding-top: 20px;
   }
-  
+
   .mo-profile-option {
 	width: 40px;
 	height: 40px;
@@ -95,26 +95,26 @@
 	outline: none;
 	background: #e40046;
   }
-  
+
   .mo-profile-option:hover {
 	background: #fff;
 	border: 1px solid #e40046;
   }
-  
+
   .mo-profile-option:hover .notification i {
 	color: #e40046;
   }
-  
+
   .mo-profile-option:hover span {
 	background: #e40046;
   }
-  
+
   .mo-profile-option .notification i {
 	color: #fff;
 	font-size: 1.2rem;
 	transition: all 0.5s ease-in-out;
   }
-  
+
   .mo-profile-option .notification .alert-message {
 	position: absolute;
 	top: -5px;
@@ -132,13 +132,13 @@
 	font-size: 0.8rem;
 	font-weight: bold;
   }
-  
+
   .mo-main-bd {
 	width: 100%;
 	display: flex;
 	padding-right: 15px;
   }
-  
+
   .mo-profile-side {
 	width: 300px;
 	background: #adacac;
@@ -147,31 +147,31 @@
 	font-family: "Bree Serif", serif;
 	z-index: 99;
   }
-  
+
   .mo-country {
 	color: #016b75;
   }
-  
+
   .mo-profile-side p {
 	margin-bottom: 7px;
 	color: #333;
 	font-size: 14px;
   }
-  
+
   .mo-profile-side p i {
 	color: #e40046;
 	margin-right: 10px;
   }
-  
+
   .mo-bile-no i {
 	transform: rotateY(180deg);
 	color: #e40046;
   }
-  
+
   .mo-profile-btn {
 	display: flex;
   }
-  
+
   .mo-button.chatbtn,
   .mo-button.createbtn {
 	border: 0;
@@ -189,21 +189,21 @@
 	transition: background 0.3s ease-in-out;
 	box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
   }
-  
+
   .mo-button.chatbtn:hover,
   .mo-button.createbtn:hover {
 	background: rgba(288, 0, 70, 0.9);
   }
-  
+
   .mo-button.chatbtn i,
   .mo-button.createbtn i {
 	margin-right: 5px;
   }
-  
+
   .mo-user-rating {
 	display: flex;
   }
-  
+
   .mo-user-rating h3 {
 	font-size: 2.5rem;
 	font-weight: 200;
@@ -211,26 +211,26 @@
 	letter-spacing: 1px;
 	color: #666;
   }
-  
+
   .mo-user-rating .no-of-user-rate {
 	font-size: 0.9rem;
 	color: #666;
   }
-  
+
   .mo-rate {
 	padding-top: 6px;
   }
-  
+
   .mo-rate i {
 	font-size: 0.9rem;
 	color: rgba(228, 0, 70, 1);
   }
-  
+
   .mo-nav {
 	width: 100%;
 	z-index: -1;
   }
-  
+
   .mo-nav ul {
 	display: flex;
 	justify-content: space-around;
@@ -239,7 +239,7 @@
 	background: #fff;
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   }
-  
+
   .mo-nav ul li {
 	padding: 10px;
 	width: 100%;
@@ -247,33 +247,33 @@
 	text-align: center;
 	transition: all 0.2s ease-in-out;
   }
-  
+
   .mo-nav ul li:hover,
   .mo-nav ul li.active {
 	box-shadow: 0px -3px 0px rgba(288, 0, 70, 0.9) inset;
   }
-  
+
   .mo-profile-body {
 	width: 100%;
 	z-index: -1;
   }
-  
+
   .mo-tab {
 	display: none;
   }
-  
+
   .mo-tab {
 	padding: 20px;
 	width: 100%;
 	text-align: center;
   }
-  
+
   @media (max-width: 1100px) {
 	.mo-profile-side {
 	  width: 250px;
 	  padding: 90px 15px 20px;
 	}
-  
+
 	.mo-profile-img img {
 	  height: 200px;
 	  width: 200px;
@@ -281,12 +281,12 @@
 	  top: 50px;
 	}
   }
-  
+
   @media (max-width: 900px) {
 	body {
 	  margin: 0 20px;
 	}
-  
+
 	.mo-profile-header {
 	  display: flex;
 	  height: 100%;
@@ -294,61 +294,61 @@
 	  text-align: center;
 	  padding-bottom: 20px;
 	}
-  
+
 	.mo-profile-img {
 	  float: left;
 	  width: 100%;
 	  height: 200px;
 	}
-  
+
 	.mo-profile-img img {
 	  position: relative;
 	  height: 200px;
 	  width: 200px;
 	  left: 0px;
 	}
-  
+
 	.mo-profile-nav-info {
 	  text-align: center;
 	}
-  
+
 	.mo-post {
 	  background-color: #333;
 	}
-  
+
 	.mo-profile-option {
 	  right: 20px;
 	  top: 75%;
 	  transform: translateY(50%);
 	}
-  
+
 	.mo-main-bd {
 	  flex-direction: column;
 	  padding-right: 0;
 	}
-  
+
 	.mo-profile-side {
 	  width: 100%;
 	  text-align: center;
 	  padding: 20px;
 	  margin: 5px 0;
 	}
-  
+
 	.mo-profile-nav-info .moaddress {
 	  justify-content: center;
 	}
-  
+
 	.mo-user-rating {
 	  justify-content: center;
 	}
   }
-  
+
   /* @media (max-width: 400px) {
 	body {
-  
+
 	} */
-  
-  
+
+
 	.mo-profile-option {
 	  width: 30px;
 	  height: 30px;
@@ -356,7 +356,7 @@
 	  right: 15px;
 	  top: 83%;
 	}
-  
+
 	.mo-profile-option .notification .alert-message {
 	  top: -3px;
 	  right: -4px;
@@ -365,31 +365,31 @@
 	  width: 15px;
 	  font-size: 0.7rem;
 	}
-  
+
 	.mo-profile-nav-info h3 {
 	  font-size: 1.9rem;
 	}
-  
+
 	.mo-profile-nav-info .address p,
 	.mo-profile-nav-info .address span {
 	  font-size: 0.7rem;
 	}
-  
-  
+
+
   #see-more-bio,
   #see-less-bio {
 	color: blue;
 	cursor: pointer;
 	text-transform: lowercase;
   }
-  
+
   .mo-tab h1 {
 	font-family: "Bree Serif", sans-serif;
 	display: flex;
 	justify-content: center;
 	margin: 20px auto;
   }
-  
+
   /* CSS for the Post Card */
   .mo-post-card {
 	border: 1px solid #ccc;
@@ -399,19 +399,19 @@
 	background-color: #f9f9f9;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   .mo-post-description {
 	font-size: 18px;
 	margin-bottom: 10px;
   }
-  
+
   /* CSS for the Delete and Update Buttons */
   .mo-post-actions {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
   }
-  
+
   .mo-delete-button,
   .mo-update-button {
 	background-color: #e74c3c;
@@ -422,11 +422,40 @@
 	cursor: pointer;
 	transition: background-color 0.3s;
   }
-  
+
   .mo-delete-button:hover,
   .mo-update-button:hover {
 	background-color: #c0392b;
   }
-  
-	  
+
+
   /* end profile-page css style */
+
+
+
+  /* category style  */
+  #card_mo{
+	background-color: #F3F6FF;
+	
+    display: flex;
+    align-content: center;
+    grid-template-columns: min-content;
+    flex-wrap: wrap;
+    justify-content: center;
+	
+}
+  
+  #moh_card_inside{
+	background-color: #f9d270da;
+	width: 400px;
+	height: 200px;
+	margin: 20px;
+	
+	display:inline-block;
+	border-radius: 5px;
+	padding: 15px;
+	/* line-height: 170%; */
+  }
+
+
+ 

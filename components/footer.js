@@ -1,20 +1,37 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-
-function Footer() {
+ export default function Footer() {
   return (
-    <div
-      style={{
-        background: "white",
-        color: "black",
-        height: "60px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <p>&copy; {new Date().getFullYear()} VisionVault. All Rights Reserved.</p>
-    </div>
+    <footer id="footer" className="bg-gray-800 text-white py-10">
+      <div
+        id="footer2"
+        className="container mx-auto flex justify-between items-center"
+      >
+        <div id="footervv" >
+          VisionVault
+        </div>
+
+        <div id="footernum" className="text-lg">
+          <p>Phone: +1 (123) 456-7890</p>
+          <p>Email: contactvision@gmail.com</p>
+        </div>
+        <a
+          href="https://github.com/yourgithubusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-400 transition duration-300 ease-in-out"
+        >
+          <FontAwesomeIcon icon={faGithub} size="2x" />
+        </a>
+
+      </div>
+
+      <div id="linefooter"></div>
+      <p id="footerdate" className="text-center">
+          &copy; {new Date().getFullYear()} VisionVault. All Rights Reserved.
+        </p>
+    </footer>
   );
 }
-
-export default Footer;
