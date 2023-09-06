@@ -6,6 +6,8 @@ import PostDetail from '@/components/PostDetail';
 import Comments from '@/components/Comments';
 import Reply from '@/components/Reply';
 import Advertisement from '@/components/Advertisement';
+import PagesNav from "@/components/pagesnav";
+import Footer from "@/components/footer";
 
 const baseUrl = process.env.NEXT_PUBLIC_URL
 
@@ -191,6 +193,7 @@ export default function PostDetails({ data }) {
         <>
             {user ? (
                 <>
+                <PagesNav/>
                     <Hhead data={"Post Detail"} />
                     <div className='aseel_container'>
                         <div className='aseel_main' >
@@ -205,7 +208,7 @@ export default function PostDetails({ data }) {
                 <Login />
             )
             }
-
+<Footer/>
         </>
     )
 }

@@ -1,6 +1,8 @@
 import Hhead from "@/components/Hhead";
 import { useAuth } from "@/contexts/auth";
 import Login from "./login";
+import PagesNav from "@/components/pagesnav";
+import Footer from "@/components/footer";
 
 export default function AboutPage() {
   const { user, token } = useAuth()
@@ -48,6 +50,7 @@ export default function AboutPage() {
     <>
       {user ? (
         <>
+        <PagesNav/>
           <Hhead data={"Contact Us"} />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -61,7 +64,7 @@ export default function AboutPage() {
 
           <section id="team" class="pb-5">
             <div >
-              <h5 class="section-title h1">OUR TEAM</h5>
+              <h5 id="abouthead1 " class="section-title h1">OUR TEAM</h5>
               <div class="row">
                 {teamMembers.map((member, index) => (
                   <div
@@ -134,6 +137,7 @@ export default function AboutPage() {
               </div>
             </div>
           </section>
+          <Footer/>
         </>
       ) : (
         <Login />

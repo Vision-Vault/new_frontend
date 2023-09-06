@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useAuth } from "@/contexts/auth";
-
 const baseUrl = process.env.NEXT_PUBLIC_URL;
 
 export default function Toprated() {
@@ -18,11 +17,11 @@ export default function Toprated() {
         }
       };
         const response = await fetch(
-          `${baseUrl}/api/v1/posts/categories/2/`,
+          `${baseUrl}/api/v1/posts/`,
           option
         );
         const jsonData = await response.json();
-        // console.log(jsonData)
+        console.log(jsonData)
         setData(jsonData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -40,7 +39,9 @@ export default function Toprated() {
   return (
     <>
       <div className="toprated">
-        <div className="topinfo">
+        <h1 id="lineh1">Top Projects</h1>
+        <div id="linetoprated"></div>
+        {/* <div className="topinfo">
           <h1>
             Projects in Need
             <br /> Support Great Ideas
@@ -50,26 +51,20 @@ export default function Toprated() {
             help turn great ideas into reality. Discover and
             <br /> support ventures that are making a positive impact.
           </p>
-        </div>
+        </div> */}
 
-
-          <div className="topposts-container">
-            {topPosts.map((item, index) => (
-              <div className="topposts" key={index}>
-<Link href={"/"}>
-              <div id='toppost1'>
-
-              <img className="wimg" src={item.image} alt={item.title} />
-                <h2>{item.title}</h2>
+        <div className="topposts-container">
+          {topPosts.map((item, index) => (
+            <div className="topposts" key={index}>
+              <Link href={`/post/${item.id}`}>
+                <div id="toppost1">
+                  <img className="wimg" src={item.image} alt='image' />
+                  <h2 id='toph2' >{item.title}</h2>
                 </div>
- </Link>
-
-
-
-              </div>
-            ))}
-          </div>
-
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
