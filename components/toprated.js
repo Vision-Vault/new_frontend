@@ -59,7 +59,7 @@ export default function Toprated() {
               <Link href={`/post/${item.id}`}>
                 <div id="toppost1">
                   <img className="wimg" src={item.image} alt='image' />
-                  <h2>{item.title}</h2>
+                  <h2 id='toph2' >{item.title}</h2>
                 </div>
               </Link>
             </div>

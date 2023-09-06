@@ -2,12 +2,17 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShieldHalved, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faHandshake } from '@fortawesome/free-regular-svg-icons';
+import PagesNav from "@/components/pagesnav";
+import Footer from "@/components/footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const AboutPage = () => {
   return (
-    <section class="section_all bg-light" id="about">
+    <>
+    <PagesNav/>
+    <section  class="section_all bg-light" id="about">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -78,7 +83,8 @@ const AboutPage = () => {
                 </div>
             </div>
         </section>
-
+        <Footer/>
+</>
   )
 };
 

@@ -1,101 +1,80 @@
-import Hhead from '../components/Hhead';
-import { useAuth } from "@/contexts/auth"
-import Login from './login';
-import { useEffect, useState } from 'react';
-import 'font-awesome/css/font-awesome.min.css';
-import PagesNav from '@/components/pagesnav';
-
-const baseUrl = process.env.NEXT_PUBLIC_URL
+import Hhead from "../components/Hhead";
+import { useAuth } from "@/contexts/auth";
+import Login from "./login";
+import { useEffect, useState } from "react";
+import "font-awesome/css/font-awesome.min.css";
+import PagesNav from "@/components/pagesnav";
+import Footer from "@/components/footer";
+const baseUrl = process.env.NEXT_PUBLIC_URL;
 
 export default function Profile() {
-  const { user, token } = useAuth()
-  const [data, setuserdata] = useState({
-    username: '',
-    profile_picture: '',
-    bio: '',
-    email: '',
-  })
+  const { user, token } = useAuth();
+  const [userData, setUserData] = useState({
+    username: "",
+    profile_picture: "",
+    bio: "",
+    email: "",
+  });
 
-  const [post, setPost] = useState([{
-    title: '',
-    description: '',
-    image: '',
-    video: '',
-    funding_goal: '',
-    allowed_donors: '',
-    rating: '',
-    status: '',
-    creator: '',
-    category: '',
-  }]);
+  const [userPosts, setUserPosts] = useState([]);
 
-
-  async function getData() {
+  async function fetchUserData() {
     if (token) {
-      const url = baseUrl + "/api/v1/accounts/2/"
-      const option = {
+      const url = baseUrl + `/api/v1/accounts/${user.id}/`;
+      const options = {
         method: "GET",
         headers: {
-          "Authorization": `Bearer ${token.access}`
-        }
-      }
-      const res = await fetch(url, option)
-      if (res.status === 200) {
-        const data = await res.json();
-        console.log(data)
-        setuserdata(data)
+          Authorization: `Bearer ${token.access}`,
+        },
+      };
+      const response = await fetch(url, options);
+      if (response.status === 200) {
+        const userData = await response.json();
+        setUserData(userData);
       } else {
         console.log("Failed to access protected route");
       }
     }
   }
-  async function getPost() {
-    if (token) {
 
-      const url = "https://new-backend-alpha.vercel.app/api/v1/posts/"
-      const option = {
+  async function fetchUserPosts() {
+    if (token) {
+      const url = `https://new-backend-alpha.vercel.app/api/v1/posts/user/${user.id}/`;
+      const options = {
         method: "GET",
         headers: {
-          "Authorization": `Bearer ${token.access}`
-        }
-      }
-      const res = await fetch(url, option)
-      if (res.status === 200) {
-        const post = await res.json();
-        console.log(post)
-        setPost(post)
-        // const Projects = post.map((post) => {
-        //   return (
-        //     <div>
-        //       <h2>{post.description}</h2>
-        //     </div>
-        //   );
-        // });
+          Authorization: `Bearer ${token.access}`,
+        },
+      };
+      const response = await fetch(url, options);
+      if (response.status === 200) {
+        const posts = await response.json();
+        setUserPosts(posts);
       } else {
         console.log("Failed to access protected route");
       }
-
     }
   }
-  async function handleDelete( postItem) {
+
+  async function handleDeletePost(postId) {
     if (token) {
-      const protectedUrl =  baseUrl +`/api/v1/posts/${postItem.id}/`;
-      const protectedOptions = {
+      const deleteUrl = baseUrl + `/api/v1/posts/${postId}/`;
+      const deleteOptions = {
         method: "DELETE",
         headers: {
-          "Authorization": `Bearer ${token.access}`,
+          Authorization: `Bearer ${token.access}`,
         },
       };
       try {
-        const protectedResponse = await fetch(protectedUrl, protectedOptions);
-        if (protectedResponse.status === 204) {
-          console.log("done ")
-          getPost()
+        const deleteResponse = await fetch(deleteUrl, deleteOptions);
+        if (deleteResponse.status === 204) {
+          console.log("Post deleted successfully");
+          fetchUserPosts();
         } else {
-          console.log("Failed to post data.");
+          console.log("Failed to delete post.");
         }
       } catch (error) {
-        console.log(`Error: ${error.message}`);
+        console.error(`Error: ${error.message}`);
       }
     } else {
       console.log("Token is missing.");
@@ -103,110 +82,73 @@ export default function Profile() {
   }
 
   useEffect(() => {
-    getData();
-    getPost(token, setPost);
+    fetchUserData();
+    fetchUserPosts();
   }, [token]);
 
   return (
     <>
       {user ? (
         <>
-
-          <Hhead data={"Home"} />
-
-<PagesNav/>
-          <div className="mo-body1">
-
-            <div className="mo-container">
-              <div className="mo-profile-header">
-                <div className="mo-profile-img">
-                  <img src={data.profile_picture} width="200" alt="Profile Image" />
-                </div>
-                <div className="mo-profile-nav-info">
-                  <div className="mo-address">
-                    <p className="mo-country" id="mo-state">
-                      Profile Page: {data.username}
-                    </p>
-                  </div>
-                </div>
+        <PagesNav/>
+          <div className="bg-gradiant-green-yellow py-8 bg-opacity-75">
+            <Hhead data={"Profile"} />
+            <div className="py-8">
+              <div className="container mx-auto flex flex-col items-center ">
+                <img
+                  src={`http://res-console.cloudinary.com/ddtte4xlk/${userData.profile_picture}`}
+                  className="rounded-full h-36 w-36 mb-4 border-4 border-white "
+                  alt=".."
+                />
+                <h1 className="text-3xl font-semibold text-gray-800">
+                  {userData.username}
+                </h1>
+                <p className="text-lg text-black-600 mt-2">
+                  Bio: {userData.bio}
+                </p>
+                <p className="text-lg text-black-600 mt-2">
+                  Email: {userData.email}
+                </p>
               </div>
-              <div className="mo-main-bd">
-                <div className="mo-left-side">
-                  <div className="mo-profile-side">
-                    <p className="mo-user-mail">
-                      <i className="fa fa-envelope"></i> {data.email}
-                    </p>
-                    <div className="mo-user-bio">
-                      <h2>Category : </h2>
-
-                      <p className="mo-bio">
+            </div>
+            <div className="container mx-auto mt-8 ">
+              <h2 className="text-2xl font-semibold text-gray-800 ">
+                My Projects
+              </h2>
+              <div className="mt-4">
+                {userPosts.map((post, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg shadow-md p-4 mt-4"
+                  >
+                    <h2 className="text-xl font-semibold text-gray-800">
                       {post.title}
-                      </p>
-                    </div>
-                    <div className="mo-profile-btn">
-                      <button className="mo-createbtn" id="mo-Create-post">
-                        <i className="fa fa-plus"></i> Create Project
+                    </h2>
+                    <p className="text-gray-600 mt-2">{post.description}</p>
+                    <div className="flex justify-end mt-4">
+                      <button
+                        className="bg-red-500 text-white px-3 py-1 rounded-full"
+                        onClick={() => handleDeletePost(post.id)}
+                      >
+                        Delete
+                      </button>
+                      <button
+                        className="bg-blue-500 text-white px-3 py-1 ml-2 rounded-full"
+                        onClick={() => handleUpdatePost(post.id)}
+                      >
+                        Update
                       </button>
                     </div>
-                    <div className="mo-user-rating">
-                      <h3 className="mo-rating">4.9</h3>
-                      <div className="mo-rate">
-                        <div className="mo-star-outer">
-                          <div className="mo-star-inner">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                        </div>
-                        <span className="mo-no-of-user-rate">
-                          <span>120</span>&nbsp;&nbsp;Posts
-                        </span>
-                      </div>
-                    </div>
                   </div>
-                </div>
-                <div className="mo-right-side">
-                  <div className="mo-right-side-post">
-                    <h1>Projects  :- </h1>
-                    <div>
-
-                    {
-                        post.map((postItem, index) => (
-                          <div className="mo-post-card" key={index}>
-                            <h2 className="mo-post-description">{postItem.title}</h2>
-                            <p className="mo-post-description">{postItem.description}</p>
-                            <div className="mo-post-actions">
-                              <button
-                                className="mo-delete-button"
-                                onClick={() => handleDelete(postItem.id)}
-                              >
-                                Delete
-                                </button>
-                                <button
-                                className="mo-update-button"
-                                onClick={() => handleUpdate(postItem.id)}
-                              >
-                                Update
-                              </button>
-                            </div>
-                          </div>
-                        ))
-                        }
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
+          <Footer/>
         </>
       ) : (
         <Login />
-      )
-      }
+      )}
     </>
-
-  )
-
+  );
 }

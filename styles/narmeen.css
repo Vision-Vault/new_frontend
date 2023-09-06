@@ -5,8 +5,9 @@
 #pagesnav{
 
 background-color: #4c8787;
-height: 100px;
-margin-bottom: 30px;
+height: 110px;
+margin-bottom: 1px;
+text-decoration: none;
 }
 
 
@@ -513,7 +514,7 @@ margin-left: 9px;
 }
 
 .topposts {
-        box-shadow: 0 0 10px rgba(12, 11, 5, 0.5);
+        box-shadow: 0 0 10px rgba(12, 11, 5, 0.144);
 
     /* background-color: #1a424265; */
     border-radius: 10px;
@@ -522,7 +523,10 @@ margin-left: 9px;
     width: 300px;
     font-size: 25px;
     }
+#toph2{
 
+font-size: 15px;
+}
 
 /* category */
 /* toprated posts */
@@ -627,3 +631,7 @@ margin-left: 9px;
 /* Narmeen Style Start*/
 
 /* footer */
+#footer{
+
+    background-color: #4c8787;
+   margin-top: 1px;}

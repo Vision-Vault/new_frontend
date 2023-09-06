@@ -24,7 +24,7 @@ export default function Home() {
           {/* <Features/> */}
 
           <Homeinfo />
-       <NFeatures/>
+       {/* <NFeatures/> */}
          <Toprated />
           <Footer />
         </>
