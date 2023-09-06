@@ -41,7 +41,7 @@ const ProjectForm = () => {
     <>
       <div className="form-overlay">
         <form className="project-form" onSubmit={PostData}>
-          <div id="titleDiv" className="form-group">
+          <div id="title" className="form-group">
             <label htmlFor="title">Title</label>
             <input type="text" placeholder="Title" name="title" id="title" />
           </div>

@@ -5,12 +5,12 @@ import { useAuth } from "@/contexts/auth"
 import Home from './mainhome';
 import { useState } from 'react';
 import Link from 'next/link';
-let hasError = false; 
+let hasError = false;
 
 
 export default function Login() {
   const { login, user, token, logout } = useAuth()
-  const [hasError, setHasError] = useState(false); 
+  const [hasError, setHasError] = useState(false);
 
   async function loginhandiler(event) {
     event.preventDefault();
@@ -18,7 +18,7 @@ export default function Login() {
 
     if (result !== 200) {
       console.log(result);
-      setHasError(true); 
+      setHasError(true);
       console.log('hasError', hasError)
     }
 
@@ -36,16 +36,24 @@ export default function Login() {
           <div className="login_container">
             <div className="Ha-container">
               <div className="form-container sign-in-container">
-                <form className='login_form' action="#" method="POST" onSubmit={loginhandiler}>
-                  <h1 className='login_h1'>Login</h1>
+                <form
+                  className="login_form"
+                  action="#"
+                  method="POST"
+                  onSubmit={loginhandiler}
+                >
+                  <h1 className="login_h1">Login</h1>
+
                   <input
-                    className='login_input'
+                    id="inputlogin"
+                    className="login_input"
                     type="text"
                     placeholder="Username"
                     name="username"
                   />
                   <input
-                    className='login_input'
+                    id="inputlogin2"
+                    className="login_input"
                     type="password"
                     placeholder="Password"
                     name="password"
@@ -57,15 +65,14 @@ export default function Login() {
                 </form>
               </div>
 
-              
               <div className="overlay-container">
                 <div className="overlay">
-                  <div className="overlay-panel overlay-left">
-
-                  </div>
+                  <div className="overlay-panel overlay-left"></div>
                   <div className="overlay-panel overlay-right">
-                    <h2 className='login_h2'>Hello, Friend!</h2>
-                    <p className=''>Enter your personal details and start the journey with us</p>
+                    <h2 className="login_h2">Hello, Friend!</h2>
+                    <p className="">
+                      Enter your personal details and start the journey with us
+                    </p>
                     <button className="login_button ghost">Sign Up</button>
                   </div>
                 </div>
@@ -73,9 +80,7 @@ export default function Login() {
             </div>
           </div>
         </>
-
-      )
-      }
+      )}
     </>
-  )
+  );
 }

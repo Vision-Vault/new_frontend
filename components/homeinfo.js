@@ -14,12 +14,28 @@ export default function Homeinfo() {
       <img id="homegif" src="/images/g2.gif" alt="GIF" />
 
       <div id="syllabus">
-        <h1>Project Success Roadmap</h1>
+        <h1
+          style={{
+            fontFamily: "monospace",
+            fontSize: 26,
+            fontWeight: "bold",
+          }}
+        >
+          Project Success Roadmap
+        </h1>
 
         <img id="plan" src="/images/plan.png" alt="GIF" />
 
         <div id="step1">
-          <h2>Plan Your Project</h2>
+          <h2
+            style={{
+              fontFamily: "monospace",
+              fontSize: 18,
+              fontWeight: "bold",
+            }}
+          >
+            Plan Your Project
+          </h2>
           <p>
             Define Objectives and Scope <br />
             Create a Project Plan <br />
@@ -30,7 +46,15 @@ export default function Homeinfo() {
         <img id="excuit" src="/images/excuit.png" alt="GIF" />
 
         <div id="step2">
-          <h2>Execute Your Plan</h2>
+          <h2
+            style={{
+              fontFamily: "monospace",
+              fontSize: 18,
+              fontWeight: "bold",
+            }}
+          >
+            Execute Your Plan
+          </h2>
           <p>
             Implement and Monitor
             <br /> Communicate and Manage Risks
@@ -42,7 +66,15 @@ export default function Homeinfo() {
         <img id="close" src="/images/close.png" alt="close" />
 
         <div id="step3">
-          <h2>Review and Close</h2>
+          <h2
+            style={{
+              fontFamily: "monospace",
+              fontSize: 18,
+              fontWeight: "bold",
+            }}
+          >
+            Review and Close
+          </h2>
           <p>
             Track Progress and Resolve Issues
             <br /> Document and Engage Stakeholders <br />
@@ -63,7 +95,7 @@ export default function Homeinfo() {
 
       {showNewDiv && (
         <div className="newDiv">
-             <img src="/images/map.png" alt="mm"/>
+          <img src="/images/map.png" alt="mm" />
           <ProjectForm />
           <button id="cancel" onClick={toggleNewDiv}>
             <i
@@ -75,8 +107,6 @@ export default function Homeinfo() {
               }}
             ></i>
           </button>
-
-
         </div>
       )}
     </div>

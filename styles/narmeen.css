@@ -391,14 +391,15 @@ text-decoration: none;
     text-align: center;
 }
 
-label {
+.form-overlay label {
     display: block;
     margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="number"],
-textarea {
+.form-overlay input[type="text"],
+
+.form-overlay input[type="number"],
+.form-overlay textarea {
     background-color: #dddddd1f;
     width: 250px;
     padding: 10px;
@@ -623,7 +624,7 @@ font-size: 15px;
 }
 
 .start-page .signin-button:hover {
-    background-color: #eceab4e1;
+    background-color: #c5c6dbe1;
     box-shadow: 0 0 10px #014141;
     color: #132A09;
 }
@@ -654,3 +655,13 @@ font-size: 15px;
     background-color: white;
     margin-top: 5px;
    }
+
+
+   #startpageimg{
+
+    width:70%;
+   }
+   /* .start-page{
+    background-image: url('/images/s22.jpg');
+    background-size: contain;
+   } */
