@@ -26,33 +26,42 @@ export default function Login() {
           <div className="login_container">
             <div className="Ha-container">
               <div className="form-container sign-in-container">
-                <form className='login_form' action="#" method="POST" onSubmit={loginhandiler}>
-                  <h1 className='login_h1'>Login</h1>
+                <form
+                  className="login_form"
+                  action="#"
+                  method="POST"
+                  onSubmit={loginhandiler}
+                >
+                  <h1 className="login_h1">Login</h1>
+
                   <input
-                    className='login_input'
+                    id="inputlogin"
+                    className="login_input"
                     type="text"
                     placeholder="Username"
                     name="username"
                   />
                   <input
-                    className='login_input'
+                    id="inputlogin"
+                    className="login_input"
                     type="password"
                     placeholder="Password"
                     name="password"
                   />
-                  <button id="login1" className='login_button1' type="submit">Login</button>
+                  <button id="login1" className="login_button1" type="submit">
+                    Login
+                  </button>
                 </form>
               </div>
 
-              
               <div className="overlay-container">
                 <div className="overlay">
-                  <div className="overlay-panel overlay-left">
-
-                  </div>
+                  <div className="overlay-panel overlay-left"></div>
                   <div className="overlay-panel overlay-right">
-                    <h2 className='login_h2'>Hello, Friend!</h2>
-                    <p className=''>Enter your personal details and start the journey with us</p>
+                    <h2 className="login_h2">Hello, Friend!</h2>
+                    <p className="">
+                      Enter your personal details and start the journey with us
+                    </p>
                     <button className="login_button ghost">Sign Up</button>
                   </div>
                 </div>
@@ -60,9 +69,7 @@ export default function Login() {
             </div>
           </div>
         </>
-
-      )
-      }
+      )}
     </>
-  )
+  );
 }
