@@ -1,0 +1,12 @@
+
+.bg-gradiant-green-yellow{
+    background: linear-gradient(40deg,#e0b98ca8,#b4926bbd,#92714db7);
+
+}
+
+.mo_profile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0% 5%;
+}

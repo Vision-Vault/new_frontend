@@ -1,0 +1,370 @@
+
+/* start post page */
+
+.aseel_container {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-auto-rows: auto;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer"
+	;
+	grid-gap: 50px;
+}
+
+.aseel_main {
+	grid-area: main;
+	width: 100%;
+	padding: 15px 50px 15px 50px;
+	display: grid;
+	grid-template-areas:
+		"post post post reply reply"
+		"post post post reply reply"
+		"comments comments comments reply reply"
+		"comments comments comments advertisement advertisement"
+		"comments comments comments advertisement advertisement"
+	;
+	grid-gap: 5% 10%;
+	margin-bottom: 5%;
+
+}
+
+.aspost {
+	grid-area: post;
+	background-color: #ffffff;
+	padding: 3%;
+	border: none;
+	border-radius: 15px;
+	height: 600px;
+	width: 800px;
+	font-size: 16px;
+}
+
+.aspost .title{
+	font-size: 30px;
+}
+
+.aspost .media {
+	display: flex;
+	height: 275px;
+	justify-content: center;
+	align-items: center;
+	border: 3px solid #C4C4C4;
+	border-radius: 5px;
+}
+
+.aspost .media img {
+	height: 260px;
+}
+
+.aspost .detail {
+	padding: 1%;
+	height: 275px;
+	display: grid;
+}
+
+.aspost .detail .rating{
+	font-size: 25px;
+	width: max-content;
+}
+
+.aspost .detail .donation{
+	background-image: linear-gradient(40deg,#b67122,#c96c01,#c96c01,#333333);
+	color: #ffffff;
+	padding: 1% 2% 1% 2%;
+	border: none;
+	border-radius: 10px;
+	text-shadow: 1px 1px 5px #0A032A;
+	font-weight: bold;
+}
+
+.aspost .detail .donation:hover{
+	background-image: linear-gradient(40deg,#e5ad6d,#b76e1b,#c96c01,#6c6a6a);
+}
+
+.aspost .detail div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.aspost .detail div strong {
+	font-size: 30px;
+	color: #333333;
+}
+
+.asposts .detail div select {
+	width: 500px;
+	border: 1px solid #121010;
+}
+
+.select option,
+.select {
+	background-color: #f5f6f7 !important;
+	color: #333333 !important;
+	font-size: 27px !important;
+	font-weight: bold;
+	border: 2px solid #121010;
+	border-radius: 5px;
+	padding: 1px 2px;
+}
+
+
+.ascomments {
+	grid-area: comments;
+	background-color: #ffffff;
+	padding: 3%;
+	border: none;
+	border-radius: 15px;
+	height: 630px;
+	width: 700px;
+	display: flex;
+	flex-direction: column;
+	gap: 5%;
+}
+
+.ascomments .create {
+	margin-left: 1%;
+	width: 80%;
+	border: 1px solid #c96c01;
+	border-radius: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.ascomments .create input {
+	/* background-color: #f5f6f7 !important ; */
+	background-color: #ffffff;
+	width: 80%;
+	padding: 2% 0 2% 5%;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	font-size: 20px;
+	border: none;
+}
+
+.ascomments .create button {
+	width: 20%;
+	border-top-right-radius: 40px;
+	border-bottom-right-radius: 40px;
+	font-weight: bold;
+	font-size: 18px;
+	color: white !important;
+	text-shadow: 1px 1px 5px #0A032A;
+	padding: 1.5%;
+	background-color: #c96c01;
+}
+
+.ascomments .create button i {
+	color: #f5f6f7;
+	font-size: 35px;
+}
+
+.ascomments .create button:hover {
+	cursor: pointer;
+	transform: scale(1, 1);
+	text-shadow: 1px 1px 2px #0A032A;
+	background-color: #ffd078;
+}
+
+.ascomments section {
+	overflow-y: scroll;
+	width: 630px;
+	padding: 1%;
+	/* margin: auto; */
+	margin-left: 2%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+}
+
+.ascomments section .oneComment {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	column-gap: 10px;
+}
+
+
+.ascomments section .oneComment .profile img {
+	width: 67px;
+	height: 45px;
+	border: none;
+	border-radius: 100px;
+}
+
+.ascomments section .oneComment .option {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.ascomments section .oneComment .content {
+	display: flex;
+	width: 800px;
+	padding-right: 10px;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.ascomments section .oneComment .update{
+	width: 100%;
+}
+
+.ascomments section .oneComment .update textarea {
+	padding: 5px 5px 5px 10px;
+	width: 90%;
+	height: 100px;
+}
+
+.ascomments section .oneComment .update button{
+	color: #333333;
+}
+
+.ascomments section .oneComment .button {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 5px;
+	padding-right: 5%;
+}
+
+.asreply section .oneComment .content .option .choice,
+.ascomments section .oneComment .option .choice {
+	cursor: pointer;
+	display: block;
+}
+
+.asreply {
+	grid-area: reply;
+	padding: 5px;
+	border: 1px solid #dbdbdb;
+	background-color: #ffffff;
+	border-radius: 15px;
+	height: 650px;
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+}
+
+.asreply section {
+	overflow: hidden;
+	width: 450px;
+	padding: 1%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+	height: 500px;
+	overflow-y: scroll !important;
+}
+
+.asreply section .oneComment {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	column-gap: 10px;
+}
+
+.asreply section .oneComment img {
+	width: 58px;
+	height: 45px;
+	border: none;
+	border-radius: 100px;
+}
+
+.asreply section .oneComment .content {
+	display: flex;
+	width: 450px;
+	flex-direction: column;
+	padding-right: 5px;
+	gap: 3px;
+}
+
+.asreply section .oneComment .content .option {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.asreply section .oneComment .update{
+	width: 100%;
+}
+
+.asreply section .oneComment .update textarea {
+	padding: 5px 5px 5px 10px;
+	width: 90%;
+	height: 100px;
+}
+
+.asreply section .oneComment .update button{
+	color: #333333;
+	font-size: 13px;
+	float: right;
+}
+
+.asreply .create {
+	margin: auto;
+	width: 80%;
+	border: 1px solid #c96c01;
+	border-radius: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.asreply .create input {
+	/* background-color: #f5f6f7 !important ; */
+	background-color: #ffffff;
+	width: 80%;
+	padding: 1% 0 1% 5%;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	font-size: 18px;
+	border: none;
+}
+
+
+.asreply .create button {
+	width: 20%;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+	font-weight: bold;
+	font-size: 15px;
+	color: white;
+	text-shadow: 1px 1px 2px #0A032A;
+	padding: 1%;
+	background-color: #c96c01;
+}
+
+.asreply .create button i {
+	color: #f5f6f7;
+	font-size: 25px;
+}
+
+.asreply .create button:hover {
+	cursor: pointer;
+	transform: scale(1, 1);
+	text-shadow: 1px 1px 2px #0A032A;
+	background-color: #ffd078;
+}
+
+.asadvertisement {
+	grid-area: advertisement;
+	height: 500px;
+	width: 500px;
+}
+
+.asadvertisement img {
+	border: none;
+	border-radius: 5px;
+}
+
+.asadvertisement video {
+	width: 100%;
+	height: 70%;
+}
+
+/* end post page */
