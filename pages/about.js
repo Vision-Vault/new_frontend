@@ -40,7 +40,6 @@ const AboutPage = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
         <Footer/>

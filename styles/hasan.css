@@ -1,3 +1,4 @@
+
 /* ---login styling start --- */
 .login_container {
 	background-color: lightgray;
@@ -8,6 +9,7 @@
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
+
 }
 
 .login_form {
@@ -19,6 +21,7 @@
 	padding: 0 50px;
 	height: 100%;
 	text-align: center;
+
 }
 
 .login_h1 {

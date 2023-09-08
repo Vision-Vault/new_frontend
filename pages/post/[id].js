@@ -1,3 +1,4 @@
+
 import Hhead from "@/components/Hhead";
 import { useAuth } from "@/contexts/auth"
 import { useState, useEffect } from 'react';
@@ -6,7 +7,6 @@ import { useRouter } from 'next/router';
 import PostDetail from '@/components/PostDetail';
 import Comments from '@/components/Comments';
 import Reply from '@/components/Reply';
-import Advertisement from '@/components/Advertisement';
 import PagesNav from "@/components/pagesnav";
 import Footer from "@/components/footer";
 
@@ -60,7 +60,6 @@ export default function PostDetails() {
             const res = await fetch(url, option)
             if (res.status === 201) {
                 console.log(res.status)
-                getComments(comment.project)
 
             } else {
                 console.log("Failed to access protected route.");

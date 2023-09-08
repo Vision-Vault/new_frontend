@@ -26,8 +26,6 @@ function Header() {
 
           {/* <button id="start-button">Start here</button> */}
         </div>
-
-
       </div>
     </>
   );
