@@ -1,4 +1,13 @@
-.bg-gradiant-green-yellow{
-    background: linear-gradient(130deg, #4c8787, #4c8787, #f9d370);
 
+
+.bg-gradiant-green-yellow{
+    background: linear-gradient(40deg,#e0b98ca8,#b4926bbd,#92714db7);
+
+}
+
+.mo_profile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0% 5%;
 }

@@ -39,7 +39,7 @@ export default function Profile() {
 
   async function fetchUserPosts() {
     if (token) {
-      const url = `https://new-backend-alpha.vercel.app/api/v1/posts/user/${user.id}/`;
+      const url = baseUrl + `/api/v1/posts/user/${user.id}/`;
       const options = {
         method: "GET",
         headers: {
@@ -90,13 +90,13 @@ export default function Profile() {
     <>
       {user ? (
         <>
-        <PagesNav/>
+          <PagesNav />
           <div className="bg-gradiant-green-yellow py-8 bg-opacity-75">
             <Hhead data={"Profile"} />
-            <div className="py-8">
+            <div className="py-8 ">
               <div className="container mx-auto flex flex-col items-center ">
                 <img
-                  src={`http://res-console.cloudinary.com/ddtte4xlk/${userData.profile_picture}`}
+                  src={`${userData.profile_picture}`}
                   className="rounded-full h-36 w-36 mb-4 border-4 border-white "
                   alt=".."
                 />
@@ -112,10 +112,10 @@ export default function Profile() {
               </div>
             </div>
             <div className="container mx-auto mt-8 ">
-              <h2 className="text-2xl font-semibold text-gray-800 ">
-                My Projects
-              </h2>
-              <div className="mt-4">
+              <div className="mt-4 mo_profile">
+                <h2 className="text-2xl font-semibold text-gray-800 ">
+                  My Projects
+                </h2>
                 {userPosts.map((post, index) => (
                   <div
                     key={index}
@@ -144,7 +144,7 @@ export default function Profile() {
               </div>
             </div>
           </div>
-          <Footer/>
+          <Footer />
         </>
       ) : (
         <Login />

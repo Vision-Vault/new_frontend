@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
 
-#pagesnav{
+#pagesnav {
 
-background-color: #4c8787;
-height: 110px;
-margin-bottom: 1px;
-text-decoration: none;
+    background-color: #151616;
+    height: 100px;
+    margin-bottom: 1px;
+    text-decoration: none;
 }
 
 
@@ -20,30 +20,28 @@ text-decoration: none;
 }
 
 .header {
-    background: linear-gradient(130deg, #4c8787, #4c8787, #f0dfb4);
+    background: linear-gradient(150deg, #101010, #3b3b3b, #333333, #c96c01);
     padding-bottom: 30px;
     height: 700px;
-    border-bottom-left-radius: 22px;
-    border-bottom-right-radius: 22px;
     z-index: 2;
 }
 
 .header-image {
-    width: 650px;
+    width: 700px;
     /* height: 100%; */
-    margin-left: 55%;
+    margin-left: 50%;
     object-fit: cover;
     /* margin-top: 5%; */
 }
 
 .desc {
-    margin-top: -26%;
+    margin-top: -30%;
     margin-bottom: 500px;
     margin-left: 60px;
 }
 
 #vv {
-    font-size: 26px;
+    font-size: 30px;
     display: inline-block;
     background: linear-gradient(to right,
             rgb(240, 240, 240),
@@ -57,7 +55,7 @@ text-decoration: none;
 }
 
 .pp {
-    font-size: 1.8em;
+    font-size: 40px;
     display: inline-block;
     /* margin-top: 30px; */
     background-clip: text;
@@ -65,7 +63,7 @@ text-decoration: none;
 }
 
 #bigidea {
-    color: rgba(255, 255, 255, 0.452);
+    color: rgba(216, 216, 216, 0.796);
     font-size: 17px;
 }
 
@@ -75,14 +73,14 @@ text-decoration: none;
     margin-left: 30px;
     border-radius: 20px;
     padding: 10px 70px;
-    border-color: #ffffff;
-    border: none;
-    color: #4c8787;
-    background-color: #f3d383;
+    border: 3px solid #c96c01;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #c96c01;
 }
 
 #start-button33:hover {
-    color: #4c8787;
+    color: #c96c01;
     background-color: #ffffff;
     cursor: pointer;
 }
@@ -136,11 +134,12 @@ text-decoration: none;
 }
 
 #homegif {
-    display: inline-block;
+    /* display: inline-block; */
     width: 600px;
-    margin-top: -200px;
-    z-index: 1;
-    position: sticky;
+    margin-top: -150px;
+    margin-left: 2%;
+    /* z-index: 1;
+    position: sticky; */
 }
 
 .homeinfo h1 {
@@ -167,10 +166,15 @@ text-decoration: none;
 .navbar-link {
     display: flex;
     color: #ffffff;
+    font-weight: bold;
     margin-left: 27px;
     margin-top: 0px;
     font-size: 17px;
     /* font-weight: bold; */
+}
+
+.navbar-link:hover {
+    color: #c96c01;
 }
 
 .nav-elemnts {
@@ -181,8 +185,8 @@ text-decoration: none;
 }
 
 .navbar img {
-    margin-top: -10px;
-    width: 120px;
+    margin-top: 30px;
+    width: 300px;
 }
 
 #userhome {
@@ -207,7 +211,7 @@ text-decoration: none;
     border-radius: 10px;
     width: 100%;
     height: 300px;
-    box-shadow: 0 0 10px #4c8787;
+    box-shadow: 0 0 10px #c96c01;
     text-align: center;
     /* border: solid;
     border-top: #62cccc23;
@@ -300,7 +304,7 @@ text-decoration: none;
     padding: 20px 50px;
     border-style: none;
     border-radius: 20px;
-    background: linear-gradient(130deg, #4c87876b, #4c8787, #e2e2e2);
+    background: linear-gradient(150deg, #101010b5, #3b3b3bda, #333333, #c96c01);
     box-shadow: 0 0 15px rgba(8, 8, 8, 0.8);
     z-index: 3;
     position: relative;
@@ -321,8 +325,6 @@ text-decoration: none;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.589), transparent);
-    animation: lightPass 4s linear infinite;
 }
 
 @keyframes lightPass {
@@ -343,7 +345,7 @@ text-decoration: none;
 .newDiv {
     position: relative;
     z-index: 4;
-    background: linear-gradient(130deg, #4c8787, #4c8787, #ebebeb);
+    background: linear-gradient(150deg, #101010, #3b3b3b, #333333, #c96c01);
     width: 100%;
     border-radius: 4px;
     box-shadow: 0 0 15px rgba(8, 8, 8, 0.8);
@@ -375,8 +377,8 @@ text-decoration: none;
 
 /* hussam create */
 .form-overlay {
-    margin-top: -30%;
-    margin-left: 40%;
+    margin-top: -2.8%;
+    /* margin-left: 40%; */
     display: inline-block;
     background-color: #33333300;
     width: 710px;
@@ -426,51 +428,53 @@ button[type="submit"] {
 }
 
 #createsubmit {
-    background-color: #4c8787;
+    background-color: #c96c01;
     box-shadow: 0px 0px 05px rgb(236, 234, 234);
     padding: 10px 30px;
     display: inline-block;
+    font-weight: bold;
     margin-top: -40px;
     margin-left: 40px;
 }
 
 #createsubmit:hover {
     background-color: #ffffff;
-    color: #4c878765;
+    color: #c96c01;
 }
 
 /* hussam create */
 /* homenew */
 /* toprated posts */
 
+#linetoprated {
 
-#linetoprated{
-
-     background-image:linear-gradient(90deg, #07092c,
-  #4c8787, rgba(102, 95, 73, 0.055));
-  height:0.1rem;
-  width: 70%;
-   display: inline-block;
-margin-left: 9px;
+    background-image: linear-gradient(90deg, #07092c,
+            #c96c01, rgba(102, 95, 73, 0.055));
+    height: 0.1rem;
+    width: 70%;
+    display: inline-block;
+    margin-left: 9px;
 }
 
-#lineh1{
+#lineh1 {
 
- font-size: 40px;
+    font-size: 40px;
     color: rgb(6, 12, 43);
     margin-bottom: 80px;
-     display: inline-block;
+    display: inline-block;
 
 }
+
 .toprated {
     /* position: relative; */
     /* background: gray; */
-    margin:20px;
+    margin: 20px;
     width: 90%;
     text-align: center;
     border-left: #0a1a1a;
-        border-right: #0a1a1a;
-        margin-left: 70px;
+    border-right: #0a1a1a;
+    margin-left: 70px;
+
 
     /* display: inline-block; */
     /* z-index: 0; */
@@ -496,14 +500,14 @@ margin-left: 9px;
 }
 
 .topposts-container {
-     display: flex;
+    display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     /* background-color: #bebebc; */
 
     border-radius: 15px;
     margin: 40px;
-      display: flex;
+    display: flex;
     align-content: center;
     /* grid-template-columns: min-content; */
     flex-wrap: wrap;
@@ -511,22 +515,23 @@ margin-left: 9px;
 }
 
 .topposts:hover {
-    box-shadow: 0 0 10px rgba(11, 71, 88, 0.5);
+    box-shadow: 0 0 10px rgba(88, 49, 11, 0.5);
 }
 
 .topposts {
-        box-shadow: 0 0 10px rgba(12, 11, 5, 0.144);
+    box-shadow: 0 0 10px rgba(12, 11, 5, 0.144);
 
     /* background-color: #1a424265; */
     border-radius: 10px;
     padding: 20px;
-    margin:20px 50px;
+    margin: 20px 50px;
     width: 300px;
     font-size: 25px;
-    }
-#toph2{
+}
 
-font-size: 15px;
+#toph2 {
+
+    font-size: 15px;
 }
 
 /* category */
@@ -567,11 +572,22 @@ font-size: 15px;
 /* narmeen */
 /* start video */
 .start-page {
-    position: relative;
+    background-image: linear-gradient(#4942366c, #2b1d126f, #41383070), url('../public/assests/business.jpg');
+    /* position: relative;
     grid-area: main;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden; */
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    font-family: Arial, sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .start-page .background-video {
@@ -588,31 +604,34 @@ font-size: 15px;
 
 .start-page .content {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
+    display: grid;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #132A09;
+    gap: 100px;
 }
 
 .start-page h1 {
-    font-size: 60px;
+    font-size: 80px;
     font-weight: bold;
-    color: white;
-    text-shadow: 0 0 7px #0a1a1a;
+    color: #cd7603;
+    text-shadow: 2px 2px 10px #000000 !important;
 }
 
 .start-page p {
-    font-size: 1.2rem;
-    font-weight: 400;
-    text-shadow: 0 0 9px #fff;
+    font-size: 25px;
+    font-weight: bold !important;
+    text-shadow: 2px 2px 5px #000000;
+    color: #ffffff;
 }
 
 .start-page .signin-button {
-    background-color: #ffffffbd;
-    color: #4c8787;
+    background-color: #878787ae;
+    color: #cd7603;
     box-shadow: 0 0 10px rgb(0, 0, 0);
-    text-shadow: 1px 1px 2px #0a1a1a;
+    text-shadow: 2px 2px 5px #000000;
     padding: 1rem 5rem;
     border: none;
     font-weight: bold;
@@ -624,44 +643,44 @@ font-size: 15px;
 }
 
 .start-page .signin-button:hover {
-    background-color: #c5c6dbe1;
-    box-shadow: 0 0 10px #014141;
-    color: #132A09;
+    background-color: #c5c6dbb4;
+    color: #cd7603;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
 /* Narmeen Style Start*/
 
 /* footer */
-#footer{
+#footer {
 
-    background-color: #4c8787;
-   margin-top: 1px;}
+    background-color: #c96c01;
+    margin-top: 1px;
+}
 
-   #footervv{
+#footervv {
 
     margin-left: -100px;
-   }
-   #footerdate{
+}
+
+#footerdate {
     margin-left: 2%;
     /* margin-top:20px; */
     display: block;
-   }
-   #footernum{
+}
+
+#footernum {
     margin-left: 78%;
-   }
-   #linefooter{
-    width:100%;
-    height:1px;
-    background-color: white;
+}
+
+#linefooter {
+    width: 100%;
+    height: 1px;
+    background-color: #cd7603;
     margin-top: 5px;
-   }
+}
 
 
-   #startpageimg{
+#startpageimg {
 
-    width:70%;
-   }
-   /* .start-page{
-    background-image: url('/images/s22.jpg');
-    background-size: contain;
-   } */
+    width: 70%;
+}

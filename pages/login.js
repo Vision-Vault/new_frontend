@@ -59,9 +59,7 @@ export default function Login() {
                     name="password"
                   />
                   <button id="login1" className='login_button1' type="submit">Login</button>
-
                   <div className={hasError ? "visible" : "hidden"}>Login Failed: Incorrect Email or Password</div>
-                  <button className='login_button' type="submit">Login</button>
                 </form>
               </div>
 

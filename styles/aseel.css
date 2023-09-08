@@ -70,7 +70,7 @@
 }
 
 .aspost .detail .donation{
-	background-image: linear-gradient(40deg,#4C8787,#398181,#398181,#333333);
+	background-image: linear-gradient(40deg,#b67122,#c96c01,#c96c01,#333333);
 	color: #ffffff;
 	padding: 1% 2% 1% 2%;
 	border: none;
@@ -80,7 +80,7 @@
 }
 
 .aspost .detail .donation:hover{
-	background-image: linear-gradient(40deg,#549696,#60adad,#71cfcf,#6c6a6a);
+	background-image: linear-gradient(40deg,#e5ad6d,#b76e1b,#c96c01,#6c6a6a);
 }
 
 .aspost .detail div {
@@ -127,7 +127,7 @@
 .ascomments .create {
 	margin-left: 1%;
 	width: 80%;
-	border: 1px solid #4C8787;
+	border: 1px solid #c96c01;
 	border-radius: 30px;
 	display: flex;
 	justify-content: space-between;
@@ -154,7 +154,7 @@
 	color: white !important;
 	text-shadow: 1px 1px 5px #0A032A;
 	padding: 1.5%;
-	background-color: #4C8787;
+	background-color: #c96c01;
 }
 
 .ascomments .create button i {
@@ -166,7 +166,7 @@
 	cursor: pointer;
 	transform: scale(1, 1);
 	text-shadow: 1px 1px 2px #0A032A;
-	background-color: #74c5c5;
+	background-color: #ffd078;
 }
 
 .ascomments section {
@@ -307,7 +307,7 @@
 .asreply .create {
 	margin: auto;
 	width: 80%;
-	border: 1px solid #4C8787;
+	border: 1px solid #c96c01;
 	border-radius: 30px;
 	display: flex;
 	justify-content: space-between;
@@ -336,7 +336,7 @@
 	color: white;
 	text-shadow: 1px 1px 2px #0A032A;
 	padding: 1%;
-	background-color: #4C8787;
+	background-color: #c96c01;
 }
 
 .asreply .create button i {
@@ -348,7 +348,7 @@
 	cursor: pointer;
 	transform: scale(1, 1);
 	text-shadow: 1px 1px 2px #0A032A;
-	background-color: #74c5c5;
+	background-color: #ffd078;
 }
 
 .asadvertisement {

@@ -24,8 +24,7 @@ function Navbar() {
   return (
     <>
       <div className="navbar" style={{ fontFamily: "Raleway, sans-serif" }}>
-        <img src="/images/l11.png" />
-        <h1 style={{ fontFamily: "Raleway, sans-serif" }}>Vision Vault</h1>
+        <img src="/assests/logo.png" />
         <div className="nav-elemnts">
           <Link className="navbar-link" href={"/mainhome"}>
             Home
@@ -55,11 +54,6 @@ function Navbar() {
           </Link>
           <Link className="navbar-link" href={"/contact"}>
             Contact Us
-          </Link>
-        </div>
-        <div className="profilein">
-          <Link href={"/"}>
-            <img id="userhome" src="/images/user.png" />
           </Link>
         </div>
       </div>

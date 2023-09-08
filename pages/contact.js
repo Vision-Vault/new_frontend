@@ -36,7 +36,7 @@ export default function AboutPage() {
     {
       name: "Muhammad Alsa'ad",
       role: "Full Stack Developer",
-      image: "/images/abd.jpg",
+      image: "/images/mha.jpg",
     },
   ];
 
